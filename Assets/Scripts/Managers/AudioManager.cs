@@ -13,6 +13,10 @@ public class AudioManager : MonoBehaviour
     private static AudioSource audioBGM;
     private static AudioSource[] audioSources;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9649b3c62241d21c4af37d2a15b21d3e05cfdbaf
     public Slider volumeSlider;
     public float Volume { get; set; }
     public static AudioManager Instance { get => _instance; set => _instance = value; }
