@@ -1,154 +1,67 @@
 fileFormatVersion: 2
-guid: 5b714cc70f03b3e499bb0a9eea23b9d2
+guid: 0be89b5738b0e494b9505847a48ac7ff
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 21300000
-    second: wall&barrier_0
+      213: 1509690687825009327
+    second: noBKG_KnightIdle_strip_0
   - first:
-      213: 21300002
-    second: wall&barrier_1
+      213: -1041377646201670004
+    second: noBKG_KnightIdle_strip_1
   - first:
-      213: 21300004
-    second: wall&barrier_2
+      213: -7453662367257214878
+    second: noBKG_KnightIdle_strip_2
   - first:
-      213: 21300006
-    second: wall&barrier_3
+      213: -5596862556851936502
+    second: noBKG_KnightIdle_strip_3
   - first:
-      213: 21300008
-    second: wall&barrier_4
+      213: -5436100206935435719
+    second: noBKG_KnightIdle_strip_4
   - first:
-      213: 21300010
-    second: wall&barrier_5
+      213: -739888894572915949
+    second: noBKG_KnightIdle_strip_5
   - first:
-      213: 21300012
-    second: wall&barrier_6
+      213: -4751331788578724310
+    second: noBKG_KnightIdle_strip_6
   - first:
-      213: 21300014
-    second: wall&barrier_7
+      213: 4951209121555206185
+    second: noBKG_KnightIdle_strip_7
   - first:
-      213: 21300016
-    second: wall&barrier_8
+      213: 1591143898244122516
+    second: noBKG_KnightIdle_strip_8
   - first:
-      213: 21300018
-    second: wall&barrier_9
+      213: 1355542653451762569
+    second: noBKG_KnightIdle_strip_9
   - first:
-      213: 21300020
-    second: wall&barrier_10
+      213: -3745036264285597575
+    second: noBKG_KnightIdle_strip_10
   - first:
-      213: 21300022
-    second: wall&barrier_11
+      213: 4143883161139031683
+    second: noBKG_KnightIdle_strip_11
   - first:
-      213: 21300024
-    second: wall&barrier_12
+      213: 8166998348595803618
+    second: noBKG_KnightIdle_strip_12
   - first:
-      213: 21300026
-    second: wall&barrier_13
+      213: 8574912610122105026
+    second: noBKG_KnightIdle_strip_13
   - first:
-      213: 21300028
-    second: wall&barrier_14
+      213: 1079820144599227151
+    second: noBKG_KnightIdle_strip_14
   - first:
-      213: 21300030
-    second: wall&barrier_15
+      213: -7880277430946860966
+    second: noBKG_KnightIdle_strip_15
   - first:
-      213: 21300032
-    second: wall&barrier_16
+      213: -9089619144299729066
+    second: noBKG_KnightIdle_strip_16
   - first:
-      213: 21300034
-    second: wall&barrier_17
+      213: 3054170832316161894
+    second: noBKG_KnightIdle_strip_17
   - first:
-      213: 21300036
-    second: wall&barrier_18
+      213: -6656655663526445974
+    second: noBKG_KnightIdle_strip_18
   - first:
-      213: 21300038
-    second: wall&barrier_19
-  - first:
-      213: 21300040
-    second: wall&barrier_20
-  - first:
-      213: 21300042
-    second: wall&barrier_21
-  - first:
-      213: 21300044
-    second: wall&barrier_22
-  - first:
-      213: 21300046
-    second: wall&barrier_23
-  - first:
-      213: 21300048
-    second: wall&barrier_24
-  - first:
-      213: 21300050
-    second: wall&barrier_25
-  - first:
-      213: 21300052
-    second: wall&barrier_26
-  - first:
-      213: 21300054
-    second: wall&barrier_27
-  - first:
-      213: 21300056
-    second: wall&barrier_28
-  - first:
-      213: 21300058
-    second: wall&barrier_29
-  - first:
-      213: 21300060
-    second: wall&barrier_30
-  - first:
-      213: 21300062
-    second: wall&barrier_31
-  - first:
-      213: 21300064
-    second: wall&barrier_32
-  - first:
-      213: 21300066
-    second: wall&barrier_33
-  - first:
-      213: 21300068
-    second: wall&barrier_34
-  - first:
-      213: 21300070
-    second: wall&barrier_35
-  - first:
-      213: 21300072
-    second: wall&barrier_36
-  - first:
-      213: 21300074
-    second: wall&barrier_37
-  - first:
-      213: 21300076
-    second: wall&barrier_38
-  - first:
-      213: 21300078
-    second: wall&barrier_39
-  - first:
-      213: 21300080
-    second: wall&barrier_40
-  - first:
-      213: 21300082
-    second: wall&barrier_41
-  - first:
-      213: 21300084
-    second: wall&barrier_42
-  - first:
-      213: 21300086
-    second: wall&barrier_43
-  - first:
-      213: 21300088
-    second: wall&barrier_44
-  - first:
-      213: 21300090
-    second: wall&barrier_45
-  - first:
-      213: 21300092
-    second: wall&barrier_46
-  - first:
-      213: 21300094
-    second: wall&barrier_47
-  - first:
-      213: 21300096
-    second: wall&barrier_48
+      213: -2149514043239394873
+    second: noBKG_KnightIdle_strip_19
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -178,7 +91,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -245,13 +158,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall&barrier_0
+      name: noBKG_KnightIdle_strip_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 320
+        y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02305410000000000800000000000000
-      internalID: 21300000
+      spriteID: faa56809eaf73f410800000000000000
+      internalID: 1509690687825009327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall&barrier_1
+      name: noBKG_KnightIdle_strip_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 320
+        y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22305410000000000800000000000000
-      internalID: 21300002
+      spriteID: c86fd195c884c81f0800000000000000
+      internalID: -1041377646201670004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall&barrier_2
+      name: noBKG_KnightIdle_strip_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 320
+        y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,20 +214,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42305410000000000800000000000000
-      internalID: 21300004
+      spriteID: 260cfe371954f8890800000000000000
+      internalID: -7453662367257214878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall&barrier_3
+      name: noBKG_KnightIdle_strip_3
       rect:
         serializedVersion: 2
         x: 192
-        y: 320
+        y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,20 +235,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62305410000000000800000000000000
-      internalID: 21300006
+      spriteID: a03e7227823f352b0800000000000000
+      internalID: -5596862556851936502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall&barrier_4
+      name: noBKG_KnightIdle_strip_4
       rect:
         serializedVersion: 2
         x: 256
-        y: 320
+        y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,20 +256,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82305410000000000800000000000000
-      internalID: 21300008
+      spriteID: 9369f2ad9a71f84b0800000000000000
+      internalID: -5436100206935435719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall&barrier_5
+      name: noBKG_KnightIdle_strip_5
       rect:
         serializedVersion: 2
         x: 320
-        y: 320
+        y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,20 +277,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2305410000000000800000000000000
-      internalID: 21300010
+      spriteID: 31399b178f26bb5f0800000000000000
+      internalID: -739888894572915949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall&barrier_6
+      name: noBKG_KnightIdle_strip_6
       rect:
         serializedVersion: 2
         x: 384
-        y: 320
+        y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,167 +298,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2305410000000000800000000000000
-      internalID: 21300012
+      spriteID: a266eb379e0ef0eb0800000000000000
+      internalID: -4751331788578724310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall&barrier_7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 160
-        width: 64
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2305410000000000800000000000000
-      internalID: 21300014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wall&barrier_8
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 160
-        width: 64
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 03305410000000000800000000000000
-      internalID: 21300016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wall&barrier_9
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 160
-        width: 64
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23305410000000000800000000000000
-      internalID: 21300018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wall&barrier_10
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 160
-        width: 64
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43305410000000000800000000000000
-      internalID: 21300020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wall&barrier_11
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 160
-        width: 64
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63305410000000000800000000000000
-      internalID: 21300022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wall&barrier_12
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 160
-        width: 64
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83305410000000000800000000000000
-      internalID: 21300024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wall&barrier_13
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 160
-        width: 64
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3305410000000000800000000000000
-      internalID: 21300026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wall&barrier_14
+      name: noBKG_KnightIdle_strip_7
       rect:
         serializedVersion: 2
         x: 448
-        y: 160
+        y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -553,20 +319,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3305410000000000800000000000000
-      internalID: 21300028
+      spriteID: 920d8f2a67a36b440800000000000000
+      internalID: 4951209121555206185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall&barrier_15
+      name: noBKG_KnightIdle_strip_8
       rect:
         serializedVersion: 2
-        x: 0
+        x: 512
         y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -574,20 +340,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3305410000000000800000000000000
-      internalID: 21300030
+      spriteID: 4970f59f1f0e41610800000000000000
+      internalID: 1591143898244122516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall&barrier_16
+      name: noBKG_KnightIdle_strip_9
       rect:
         serializedVersion: 2
-        x: 64
+        x: 576
         y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -595,20 +361,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04305410000000000800000000000000
-      internalID: 21300032
+      spriteID: 98bf1e08cdadfc210800000000000000
+      internalID: 1355542653451762569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall&barrier_17
+      name: noBKG_KnightIdle_strip_10
       rect:
         serializedVersion: 2
-        x: 128
+        x: 640
         y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -616,20 +382,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24305410000000000800000000000000
-      internalID: 21300034
+      spriteID: 9701d441c55f60cc0800000000000000
+      internalID: -3745036264285597575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall&barrier_18
+      name: noBKG_KnightIdle_strip_11
       rect:
         serializedVersion: 2
-        x: 192
+        x: 704
         y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -637,20 +403,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44305410000000000800000000000000
-      internalID: 21300036
+      spriteID: 38e2a62a7c7028930800000000000000
+      internalID: 4143883161139031683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall&barrier_19
+      name: noBKG_KnightIdle_strip_12
       rect:
         serializedVersion: 2
-        x: 256
+        x: 768
         y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -658,20 +424,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64305410000000000800000000000000
-      internalID: 21300038
+      spriteID: 2e531493ab1075170800000000000000
+      internalID: 8166998348595803618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall&barrier_20
+      name: noBKG_KnightIdle_strip_13
       rect:
         serializedVersion: 2
-        x: 320
+        x: 832
         y: 0
         width: 64
-        height: 160
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -679,8 +445,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84305410000000000800000000000000
-      internalID: 21300040
+      spriteID: 2c0885a4695300770800000000000000
+      internalID: 8574912610122105026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_KnightIdle_strip_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0bd52c43ba4cfe00800000000000000
+      internalID: 1079820144599227151
       vertices: []
       indices: 
       edges: []
@@ -688,7 +475,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f45a1db05ac7330448f711c2cb1d39cb
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

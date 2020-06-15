@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: wall&barrier_9
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300018, guid: 5b714cc70f03b3e499bb0a9eea23b9d2, type: 3}
+  m_Sprite: {fileID: 1338063624304658472, guid: 3460921caa499774195ae881e2eb7f89,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

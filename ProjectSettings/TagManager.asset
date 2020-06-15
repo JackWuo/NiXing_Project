@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -13,15 +14,9 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< HEAD
-  - player
-  - floor
-  - environment
-=======
   - 
   - 
   - 
->>>>>>> 69d87aac6f198398cb903dc2db38dc27f08ae2e3
   - 
   - 
   - 
@@ -47,12 +42,3 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< HEAD
-  - name: player
-    uniqueID: 1251224743
-    locked: 0
-  - name: floor
-    uniqueID: 1973260869
-    locked: 0
-=======
->>>>>>> 69d87aac6f198398cb903dc2db38dc27f08ae2e3
