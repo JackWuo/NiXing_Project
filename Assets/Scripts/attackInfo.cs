@@ -7,6 +7,7 @@ public class attackInfo : MonoBehaviour
     // Start is called before the first frame update
     public float pushBackScale = 1.0f;
     public float atk = 1.0f;
+    //武器的初始位置以及朝向，之后会重写的所以不必在意这块硬编码= =
     public struct weaponInfo
     {
         public Vector3 pos;

@@ -4,13 +4,14 @@ using UnityEngine;
 using Pathfinding;
 public class enemyAI : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Transform target;
     public float moveSpeed = 1f;
     public float nextWayPointDistance = 2f;
 
     public float stiffTime = 0.3f;
     float lastAttackedTime;
+
+
     Path path;
     int currentWayPoint = 0;
     bool reachEndofPath = false;
@@ -73,9 +74,11 @@ public class enemyAI : MonoBehaviour
         //    rigidbody2d.velocity = collision.GetContact(0).normal * moveSpeed;
         //}
     }
+    //遭受trigger触发器的碰撞体碰撞时的回调函数
     private void OnTriggerEnter2D(Collider2D collision)
     {
         attackInfo atkInfo = collision.GetComponentInParent<attackInfo>();
+        //如果是武器则表现受击硬直
         if (atkInfo != null && Time.time - lastAttackedTime > stiffTime)
         {
             lastAttackedTime = Time.time;

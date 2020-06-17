@@ -2,6 +2,11 @@ fileFormatVersion: 2
 guid: bc05b17ff6b407f46a4ef332349fc65f
 TextureImporter:
 <<<<<<< HEAD
+  fileIDToRecycleName: {}
+  externalObjects: {}
+  serializedVersion: 7
+=======
+<<<<<<< HEAD
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
@@ -10,6 +15,7 @@ TextureImporter:
   externalObjects: {}
   serializedVersion: 7
 >>>>>>> 69d87aac6f198398cb903dc2db38dc27f08ae2e3
+>>>>>>> 9649b3c62241d21c4af37d2a15b21d3e05cfdbaf
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -52,10 +58,14 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
 <<<<<<< HEAD
+  spritePixelsToUnits: 100
+=======
+<<<<<<< HEAD
   spritePixelsToUnits: 50
 =======
   spritePixelsToUnits: 100
 >>>>>>> 69d87aac6f198398cb903dc2db38dc27f08ae2e3
+>>>>>>> 9649b3c62241d21c4af37d2a15b21d3e05cfdbaf
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,10 +79,14 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
 <<<<<<< HEAD
+  - serializedVersion: 2
+=======
+<<<<<<< HEAD
   - serializedVersion: 3
 =======
   - serializedVersion: 2
 >>>>>>> 69d87aac6f198398cb903dc2db38dc27f08ae2e3
+>>>>>>> 9649b3c62241d21c4af37d2a15b21d3e05cfdbaf
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -84,11 +98,15 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
 <<<<<<< HEAD
+  - serializedVersion: 2
+=======
+<<<<<<< HEAD
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
 =======
   - serializedVersion: 2
 >>>>>>> 69d87aac6f198398cb903dc2db38dc27f08ae2e3
+>>>>>>> 9649b3c62241d21c4af37d2a15b21d3e05cfdbaf
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -100,11 +118,15 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
 <<<<<<< HEAD
+  - serializedVersion: 2
+=======
+<<<<<<< HEAD
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
 =======
   - serializedVersion: 2
 >>>>>>> 69d87aac6f198398cb903dc2db38dc27f08ae2e3
+>>>>>>> 9649b3c62241d21c4af37d2a15b21d3e05cfdbaf
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -116,9 +138,12 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     forceMaximumCompressionQuality_BC6H_BC7: 1
 =======
 >>>>>>> 69d87aac6f198398cb903dc2db38dc27f08ae2e3
+>>>>>>> 9649b3c62241d21c4af37d2a15b21d3e05cfdbaf
   spriteSheet:
     serializedVersion: 2
     sprites: []
@@ -127,17 +152,23 @@ TextureImporter:
     bones: []
     spriteID: be629cbb8faa8ff4e9b299692eca1a6a
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     internalID: 0
 =======
 >>>>>>> 69d87aac6f198398cb903dc2db38dc27f08ae2e3
+>>>>>>> 9649b3c62241d21c4af37d2a15b21d3e05cfdbaf
     vertices: []
     indices: 
     edges: []
     weights: []
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     secondaryTextures: []
 =======
 >>>>>>> 69d87aac6f198398cb903dc2db38dc27f08ae2e3
+>>>>>>> 9649b3c62241d21c4af37d2a15b21d3e05cfdbaf
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

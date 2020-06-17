@@ -94,10 +94,14 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
 <<<<<<< HEAD
+  spritePixelsToUnits: 100
+=======
+<<<<<<< HEAD
   spritePixelsToUnits: 25
 =======
   spritePixelsToUnits: 100
 >>>>>>> 69d87aac6f198398cb903dc2db38dc27f08ae2e3
+>>>>>>> 9649b3c62241d21c4af37d2a15b21d3e05cfdbaf
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
