@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: f85689a4926920f44ba80ecc4a78b4cc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5393245201080904983
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_0"
+  - first:
+      213: -6766897025060334770
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_1"
+  - first:
+      213: -4701099974796525329
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_2"
+  - first:
+      213: 889878199302870448
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_3"
+  - first:
+      213: -8306083606772196821
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_4"
+  - first:
+      213: -6302252132172893918
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_5"
+  - first:
+      213: 9103461558287919879
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_6"
+  - first:
+      213: -4625994670302640849
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_7"
+  - first:
+      213: 6846332496502996515
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_8"
+  - first:
+      213: -2790520207831453764
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_9"
+  - first:
+      213: -5785646629530793397
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_10"
+  - first:
+      213: -7380191308540600903
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_11"
+  - first:
+      213: 2900884184774343708
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_12"
+  - first:
+      213: -8177386107674143063
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_13"
+  - first:
+      213: -7335978757015277788
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_14"
+  - first:
+      213: -2335769206226157381
+    second: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_15"
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_0"
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 146
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e21ef270185725b0800000000000000
+      internalID: -5393245201080904983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_1"
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 146
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4391ad12072712a0800000000000000
+      internalID: -6766897025060334770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_2"
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 146
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0c7acfa7652ceb0800000000000000
+      internalID: -4701099974796525329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_3"
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 146
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5dfcae18b795c00800000000000000
+      internalID: 889878199302870448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_4"
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 98
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ad5a797fcdabc80800000000000000
+      internalID: -8306083606772196821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_5"
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 98
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 221f2e89317e988a0800000000000000
+      internalID: -6302252132172893918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_6"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 98
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70bec281e0ef55e70800000000000000
+      internalID: 9103461558287919879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_7"
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 98
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25c2cf5b5a2dcfb0800000000000000
+      internalID: -4625994670302640849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_8"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 50
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e3644d12f030f50800000000000000
+      internalID: 6846332496502996515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_9"
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 50
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf28a1e7a41649d0800000000000000
+      internalID: -2790520207831453764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_10"
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 50
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4a81ea4b0145bfa0800000000000000
+      internalID: -5785646629530793397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_11"
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 50
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd13085b1b449990800000000000000
+      internalID: -7380191308540600903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_12"
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 2
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1cf508ebc2024820800000000000000
+      internalID: 2900884184774343708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_13"
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 2
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a65ed429a6148e80800000000000000
+      internalID: -8177386107674143063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_14"
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 2
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42fea4c203e513a90800000000000000
+      internalID: -7335978757015277788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "RPG\u6E38\u620F\u89D2\u8272\u6218\u6597\u52A8\u4F5C\u884C\u8D70\u56FE-\u7D20\u6750-pudding\u7D20\u6750-\u9F99\u9A91_\u7231\u7ED9\u7F51_aigei_com_15"
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 2
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb00899484ea59fd0800000000000000
+      internalID: -2335769206226157381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
