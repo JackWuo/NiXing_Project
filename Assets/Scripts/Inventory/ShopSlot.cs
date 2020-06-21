@@ -11,12 +11,14 @@ public class ShopSlot : MonoBehaviour
     private string goodsinfo;
     public int shopslotid;
     public bool ismybagItem;
+    public bool isshowselect;
 
 
     public void onClickShopGoods()
     {
-        ShopMG.reflashGoodsinfo(goodsinfo, ismybagItem);
-        selecticon.SetActive(true);
+        ShopMG.reflashGoodsinfo(goodsinfo, ismybagItem, shopslotid);
+
+        selecticon.SetActive(isshowselect);
     }
 
     public void setShopSlot(item thisitem)
@@ -25,7 +27,15 @@ public class ShopSlot : MonoBehaviour
         {
             goodsinfo = thisitem.iteminfo;
             goodsimg.sprite = thisitem.itemimg;
-            price.text = string.Join("", thisitem.itemprice);
+            if (ismybagItem)
+                price.text = string.Join("", thisitem.itemHeld);
+            else
+                price.text = string.Join("", thisitem.itemprice);
+            isshowselect = true;
+        }
+        else
+        {
+            isshowselect = false;
         }
 
     }

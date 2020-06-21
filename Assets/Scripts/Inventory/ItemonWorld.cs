@@ -1,12 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ItemonWorld : MonoBehaviour
 {
     public item thisitem;
     public Inventory Equipbag;
     public Inventory Goodsbag;
+    public Inventory StaticBag;
+
+    private void OnEnable()
+    {
+        System.Random rd = new System.Random(Guid.NewGuid().GetHashCode());
+        int tempid = rd.Next(StaticBag.itemlist.Count);
+        thisitem = StaticBag.itemlist[tempid];
+        transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = StaticBag.itemlist[tempid].itemimg;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -18,6 +18,11 @@ public class InventoryMG : MonoBehaviour
 
     public Text CoinCount;
 
+    public Text HPcount;
+    public Text MPcount;
+
+    public item MP;
+    public item HP;
 
     public List<GameObject> slots = new List<GameObject>();
     private void Awake()
@@ -33,6 +38,7 @@ public class InventoryMG : MonoBehaviour
     {
         reflashItem(instance.Equipbag);
         instance.iteminfo.text = "";
+        reflashHMPcount();
     }
 
     public static void updateiteminfo(string itemdescription)
@@ -150,5 +156,43 @@ public class InventoryMG : MonoBehaviour
             }
         }
         reflashbag(sign);
+    }
+
+
+    public static bool GetGoods(int sign)   //sign-0 使用血瓶， sign-1使用蓝瓶
+    {
+        if (sign == 0)
+        {
+            if (instance.Goodsbag.itemlist.Contains(instance.HP))
+            {
+                instance.HP.itemHeld -= 1;
+                if (instance.HP.itemHeld == 1)
+                {
+                    instance.Goodsbag.itemlist.Remove(instance.HP);
+                }
+                reflashHMPcount();
+                return true;
+            }
+            return false;
+        }else if (sign == 1)
+        {
+            if (instance.Goodsbag.itemlist.Contains(instance.MP))
+            {
+                instance.MP.itemHeld -= 1;
+                if (instance.MP.itemHeld == 1)
+                {
+                    instance.Goodsbag.itemlist.Remove(instance.MP);
+                }
+                reflashHMPcount();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static void reflashHMPcount()
+    {
+        instance.HPcount.text = string.Join("",instance.HP.itemHeld);
+        instance.MPcount.text = string.Join("", instance.MP.itemHeld);
     }
 }

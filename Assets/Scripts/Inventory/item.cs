@@ -10,6 +10,8 @@ public class item : ScriptableObject
     public int itemHeld = 1;
     public bool isequip;
     public int itemprice;
+
+    public int sellprice;
     /***
      * itemid = enum{非装备物品，头盔，战甲，利刃，手套，斗篷，靴....}
      ***/

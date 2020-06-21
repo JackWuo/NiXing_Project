@@ -16,10 +16,20 @@ public class ShopMG : MonoBehaviour
     public GameObject shopslot;
     public GameObject shopgird;
     public GameObject MiniBagGrid;
+    public GameObject WarningPanel;
 
     public Text goodsinfo;
     public Text MinibagitemInfo;
     public Text CoinCount;
+
+    public int choseid;
+    public bool ismybaggoods;
+
+    public Image sellgoodsicon;
+    public Text sellcoin;
+    public GameObject sellPanel;
+
+    public int playerwhichbag;
 
     public List<GameObject> goods = new List<GameObject>();
     public List<GameObject> minibagGoods = new List<GameObject>();
@@ -35,13 +45,14 @@ public class ShopMG : MonoBehaviour
 
     public void OnEnable()
     {
+        GenGoods();
         chooseBagReflash(0);
         chooseBagReflash(2);
         instance.goodsinfo.text = "";
-        MinibagitemInfo.text = "";
+        instance.MinibagitemInfo.text = "";
     }
 
-    public static void reflashGoodsinfo(string newgoodsinfo, bool ismyitem)
+    public static void reflashGoodsinfo(string newgoodsinfo, bool ismyitem, int thisid)
     {
         if (ismyitem)
             instance.MinibagitemInfo.text = newgoodsinfo;
@@ -55,6 +66,8 @@ public class ShopMG : MonoBehaviour
         {
             instance.minibagGoods[i].GetComponent<ShopSlot>().selecticon.SetActive(false);
         }
+        instance.choseid = thisid;
+        instance.ismybaggoods = ismyitem;
     }
 
     private static void GenGoods()
@@ -81,10 +94,9 @@ public class ShopMG : MonoBehaviour
         {
             thisitemlists.Add(Instantiate(instance.shopslot, grid.transform));
 
-            thisitemlists[i].GetComponent<ShopSlot>().setShopSlot(thisbag.itemlist[i]);
             thisitemlists[i].GetComponent<ShopSlot>().shopslotid = i;
-
             thisitemlists[i].GetComponent<ShopSlot>().ismybagItem = judgebag;
+            thisitemlists[i].GetComponent<ShopSlot>().setShopSlot(thisbag.itemlist[i]);
         }
     }
 
@@ -95,7 +107,6 @@ public class ShopMG : MonoBehaviour
         {
             case 0:
                 {
-                    GenGoods();
                     reflashShop(instance.ShopBag, instance.shopgird, instance.goods, false);
                     instance.CoinCount.text = string.Join("", instance.playEqBag.coin.itemHeld);
                     break;
@@ -104,15 +115,95 @@ public class ShopMG : MonoBehaviour
                 {
                     reflashShop(instance.playGoodsBag, instance.MiniBagGrid, instance.minibagGoods, true);
                     instance.MinibagitemInfo.text = "";
+                    instance.playerwhichbag = 1;
                     break;
                 }
             case 2:
                 {
                     reflashShop(instance.playEqBag, instance.MiniBagGrid, instance.minibagGoods, true);
                     instance.MinibagitemInfo.text = "";
+                    instance.playerwhichbag = 2;
                     break;
                 }
         }
     }
 
+    public void BuyGoods()
+    {
+        if (!instance.ismybaggoods && instance.ShopBag.itemlist[instance.choseid]!=null)
+        {
+            int tempprice = instance.ShopBag.itemlist[instance.choseid].itemprice;
+            if (tempprice <= instance.playEqBag.coin.itemHeld)
+            {
+
+                instance.playEqBag.coin.itemHeld -= tempprice;
+                if (instance.ShopBag.itemlist[instance.choseid].isequip)
+                {
+                    InventoryMG.MGAddToBag(instance.ShopBag.itemlist[instance.choseid], 0);
+                    chooseBagReflash(2);
+                }
+                else
+                {
+                    InventoryMG.MGAddToBag(instance.ShopBag.itemlist[instance.choseid], 1);
+                    chooseBagReflash(1);
+                }
+                instance.goodsinfo.text = "";
+                instance.ShopBag.itemlist[instance.choseid] = null;
+                chooseBagReflash(0);
+            }
+            else
+            {
+                instance.WarningPanel.SetActive(true);
+            }
+        }
+    }
+
+    public void SellGoods(Inventory thisbag)
+    {
+        if (instance.ismybaggoods)
+        {
+            if (thisbag.itemlist[instance.choseid] != null)
+            {
+                instance.sellgoodsicon.sprite = thisbag.itemlist[instance.choseid].itemimg;
+                instance.sellcoin.text = string.Join("", thisbag.itemlist[instance.choseid].sellprice);
+                instance.sellPanel.SetActive(true);
+            }
+        }
+    }
+
+    public void ChoseSellBag()
+    {
+        if (instance.playerwhichbag == 2)
+        {
+            SellGoods(instance.playEqBag);
+        }else if (instance.playerwhichbag == 1)
+        {
+            SellGoods(instance.playGoodsBag);
+        }
+    }
+
+    public void RemoveMyItem()
+    {
+        if (instance.playerwhichbag == 2)
+        {
+            instance.playEqBag.coin.itemHeld += instance.playEqBag.itemlist[instance.choseid].sellprice;
+            if (instance.playEqBag.itemlist[instance.choseid].itemHeld > 1)
+                instance.playEqBag.itemlist[instance.choseid].itemHeld -= 1;
+            else if (instance.playEqBag.itemlist[instance.choseid].itemHeld == 1)
+                //instance.playEqBag.itemlist[instance.choseid] = null;
+                instance.playEqBag.itemlist.Remove(instance.playEqBag.itemlist[instance.choseid]);
+            chooseBagReflash(2);
+            instance.CoinCount.text = string.Join("", instance.playEqBag.coin.itemHeld);
+        }
+        else if (instance.playerwhichbag == 1)
+        {
+            instance.playGoodsBag.coin.itemHeld += instance.playGoodsBag.itemlist[instance.choseid].sellprice;
+            if (instance.playGoodsBag.itemlist[instance.choseid].itemHeld > 1)
+                instance.playGoodsBag.itemlist[instance.choseid].itemHeld -= 1;
+            else if (instance.playGoodsBag.itemlist[instance.choseid].itemHeld == 1)
+                instance.playGoodsBag.itemlist[instance.choseid] = null;
+            chooseBagReflash(1);
+            instance.CoinCount.text = string.Join("", instance.playGoodsBag.coin.itemHeld);
+        }
+    }
 }

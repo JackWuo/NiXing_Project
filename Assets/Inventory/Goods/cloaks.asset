@@ -17,6 +17,7 @@ MonoBehaviour:
   itemHeld: 4
   isequip: 1
   itemprice: 15
+  sellprice: 12
   itemid: 5
   itemattribute: 10
   iteminfo: "\u9B54\u6CD5\u6597\u7BF7\uFF1A\n\u6CD5\u672F\u5F3A\u5EA6\uFF1A+10"

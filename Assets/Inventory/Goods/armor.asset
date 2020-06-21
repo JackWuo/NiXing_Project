@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "\u666E\u901A\u76D4\u7532"
   itemimg: {fileID: 21300000, guid: 2f1eaeeaad36ee5469eff7ff158f37ba, type: 3}
-  itemHeld: 2
+  itemHeld: 1
   isequip: 1
   itemprice: 10
+  sellprice: 8
   itemid: 2
   itemattribute: 10
   iteminfo: "\u666E\u901A\u76D4\u7532\n\u9632\u5FA1\uFF1A+10"

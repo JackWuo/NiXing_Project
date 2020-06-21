@@ -15,9 +15,10 @@ MonoBehaviour:
   name: "\u708E\u5203"
   itemimg: {fileID: -1525763588066094277, guid: 2c05be3ba119a0e44bb44b7fde36654b,
     type: 3}
-  itemHeld: 1
+  itemHeld: 2
   isequip: 1
   itemprice: 35
+  sellprice: 28
   itemid: 3
   itemattribute: 30
   iteminfo: "\u708E\u5203\n\u653B\u51FB\uFF1A+30"

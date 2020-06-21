@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: coin
   itemimg: {fileID: 21300000, guid: d16e487ed269d0f45b87f58d3edbc5ce, type: 3}
-  itemHeld: 6
+  itemHeld: 872
   isequip: 0
+  itemprice: 0
+  sellprice: 0
   itemid: 0
   itemattribute: 0
   iteminfo: 
