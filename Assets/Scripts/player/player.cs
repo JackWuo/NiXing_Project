@@ -32,9 +32,9 @@ public class player : MonoBehaviour
     bool isMove;
     public float moveSpeed = 3.0f;
     //角色朝向
-    enum Face { up, down, left, right};
+    enum Face { up, down, left, right };
     Face face;
-    
+
 
     Transform tranform;
     Animator animator;
@@ -112,8 +112,8 @@ public class player : MonoBehaviour
                 isDash = false;
             }
         }
-            
-        if(isDash) rigidbody2d.velocity = moveDir * dashSpeed;
+
+        if (isDash) rigidbody2d.velocity = moveDir * dashSpeed;
         else rigidbody2d.velocity = moveDir * moveSpeed;
         checkFace(moveDir);
 
@@ -184,12 +184,21 @@ public class player : MonoBehaviour
     {
         enemyInfo enemy = collision.gameObject.GetComponent<enemyInfo>();
         //如果碰撞体为敌人则表现受击硬直
-        if(enemy != null && Time.time - lastAttackedTime > stiffTime)
+        if (enemy != null && Time.time - lastAttackedTime > stiffTime)
         {
             lastAttackedTime = Time.time;
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();
             sprite.color = Color.red;
             rigidbody2d.velocity = collision.GetContact(0).normal * moveSpeed;
+            //玩家被攻击后扣血，暂定是a类怪
+            playerStatus.instance.downBlood(enemyInfo.instance.enemyAttackPower(0));
+            int curBlood = playerStatus.instance.getBlood();
+            if (curBlood <= 0)
+            {
+                Debug.Log("dead");
+                //死亡
+                return;
+            }
         }
     }
     private void OnCollisionExit2D(Collision2D collision)

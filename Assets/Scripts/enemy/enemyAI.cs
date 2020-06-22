@@ -18,6 +18,11 @@ public class enemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rigidbody2d;
 
+
+    //死亡掉落物体
+    public GameObject collectObject;
+    int enemyBlood = 30;
+
     void OnPathComplete(Path p)
     {
         if (!p.error)
@@ -28,7 +33,7 @@ public class enemyAI : MonoBehaviour
     }
     void UpdatePath()
     {
-        if(seeker.IsDone()) seeker.StartPath(rigidbody2d.position, target.position, OnPathComplete);
+        if (seeker.IsDone()) seeker.StartPath(rigidbody2d.position, target.position, OnPathComplete);
     }
     void Start()
     {
@@ -61,7 +66,7 @@ public class enemyAI : MonoBehaviour
         {
             currentWayPoint++;
             //Debug.LogFormat("current way point {0} distance {1}", currentWayPoint, dis);
-        } 
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -85,11 +90,40 @@ public class enemyAI : MonoBehaviour
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();
             sprite.color = Color.red;
             rigidbody2d.velocity = (GetComponent<Transform>().position - collision.GetComponentInParent<Transform>().position) * moveSpeed;
+            //扣血
+            int playerAttack = playerStatus.instance.getAttack();
+            enemyBlood -= playerAttack;
+            if (enemyBlood <= 0)
+            {
+                Debug.Log("dead");
+                //collectObject = Instantiate(Resources.Load("Prefab/blood_Medicine"), gameObject.transform.position, Quaternion.identity) as GameObject;
+                Instantiate(collectObject, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+                return;
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         sprite.color = Color.white;
+    }
+    //死亡后随机掉落药品或者装备
+    public void RandomDrop()
+    {
+        //草莓与子弹掉落概率为1：2。12~19生成草莓，20~31生成子弹，
+        int num = (int)(Random.Range(12, 31) / 10);
+        if (num % 2 == 0)
+        {
+            Debug.Log("blue");
+            //Instantiate(collectObject, transform.position, Quaternion.identity);
+            collectObject = Instantiate(Resources.Load("Prefab/blood_Medicine"), gameObject.transform.position, Quaternion.identity) as GameObject;
+        }
+        if (num % 2 == 1)
+        {
+            Debug.Log("blood");
+            //Instantiate(collectObject, transform.position, Quaternion.identity);
+            collectObject = Instantiate(Resources.Load("Prefab/blue_Medicine"), gameObject.transform.position, Quaternion.identity) as GameObject;
+        }
     }
 }
