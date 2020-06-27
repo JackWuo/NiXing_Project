@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapManager: MonoBehaviour
+public class MapManager : MonoBehaviour
 {
     public const int wallCount = 6;
     public List<GameObject> wall = new List<GameObject>();
