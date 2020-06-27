@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapManager : MonoBehaviour
+public class MapManager: MonoBehaviour
 {
     public const int wallCount = 6;
     public List<GameObject> wall = new List<GameObject>();
-    private GameObject floor;
-    private GameObject food;
-    private GameObject barrier;
-    private List<GameObject> enemy = new List<GameObject>();
+    public GameObject floor;
+    public GameObject food;
+    public GameObject barrier;
+    public List<GameObject> enemy = new List<GameObject>();
     public GameObject player;
-    private GameObject door;
-    private GameObject chest;
-    private GameObject portal;
-    private GameObject businessman;
-    private GameObject forgeman;
+    public GameObject door;
+    public GameObject chest;
+    public GameObject portal;
+    public GameObject businessman;
+    public GameObject forgeman;
 
 
     public int minBarrierCount;
