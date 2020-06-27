@@ -40,7 +40,6 @@ public class player : MonoBehaviour
     public float dashRestTime = 1.0f;
     public float dashSpeed = 10.0f;
     public float dashHoldTime = 0.2f;
-    Vector2 lastDir;
 
     //移动信息
     bool isMove;
@@ -107,7 +106,12 @@ public class player : MonoBehaviour
         //冷却时间判断
         if (Time.time - lastDashTime > dashRestTime | Time.time < dashRestTime)
         {
-            if (Input.GetButton("Jump") && !isDash)
+            canModify = true;
+        }
+        else canModify = false;
+        if (canModify)
+        {
+            if (Input.GetButton("Jump"))
             {
                 isDash = true;
                 lastDashTime = Time.time;

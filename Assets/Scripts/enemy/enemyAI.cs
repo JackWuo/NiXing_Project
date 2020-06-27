@@ -26,6 +26,10 @@ public class enemyAI : MonoBehaviour
     Rigidbody2D rigidbody2d;
     Collider2D collider;
 
+
+    //死亡掉落物体
+    public GameObject collectObject;
+    int enemyBlood = 30;
     GameObject atk;
     void OnPathComplete(Path p)
     {
