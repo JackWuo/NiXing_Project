@@ -44,6 +44,7 @@ public class player : MonoBehaviour
     //移动信息
     bool isMove;
     public float moveSpeed = 3.0f;
+    Vector2 lastDir;
     //角色朝向
     public enum Face { up, down, left, right};
     Face face;
@@ -60,6 +61,7 @@ public class player : MonoBehaviour
     attackInfo.WeaponInfo weaponInfo;
     attackInfo.SkillInfo skillInfo;
 
+    AudioSource audio;
     void Start()
     {
         lastAttackTime = 0.0f;
@@ -77,6 +79,7 @@ public class player : MonoBehaviour
         tranform = GetComponent<Transform>();
         animator = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
+        audio = GetComponent<AudioSource>();
 
         weapon = GameObject.Find("weapon");
         attack = GetComponent<attackInfo>();
@@ -105,11 +108,6 @@ public class player : MonoBehaviour
         if (moveDir != new Vector2(0, 0)) lastDir = moveDir;
         //冷却时间判断
         if (Time.time - lastDashTime > dashRestTime | Time.time < dashRestTime)
-        {
-            canModify = true;
-        }
-        else canModify = false;
-        if (canModify)
         {
             if (Input.GetButton("Jump"))
             {
