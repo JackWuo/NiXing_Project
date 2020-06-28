@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6697870957796749503}
-  - component: {fileID: 6011622486949064403}
   - component: {fileID: 4793555730016851926}
+  - component: {fileID: 2564510522380994775}
   m_Layer: 0
-  m_Name: GenPerfab
+  m_Name: B_GenPerfab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,22 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6011622486949064403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3177799561823171708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4afd1451069cad4f9b6281ce8a10355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisitem: {fileID: 11400000, guid: d88e59fe8ef0c6c4d85ce79526d3e6ac, type: 2}
-  Equipbag: {fileID: 11400000, guid: 901a61556d88ce643b157aef8581c7f0, type: 2}
-  Goodsbag: {fileID: 11400000, guid: 782e5a322733fa24d9646e258694d994, type: 2}
-  StaticBag: {fileID: 11400000, guid: 4a2534d5133b3024699cb076b2b27311, type: 2}
 --- !u!61 &4793555730016851926
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75,6 +59,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2564510522380994775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177799561823171708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3fec9e2331673846a291fb5460cf873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisitem: {fileID: 11400000, guid: 970a206ed5e65a24f8c9b7b9ea414a7c, type: 2}
+  Equipbag: {fileID: 11400000, guid: 901a61556d88ce643b157aef8581c7f0, type: 2}
+  Goodsbag: {fileID: 11400000, guid: 782e5a322733fa24d9646e258694d994, type: 2}
+  StaticBag: {fileID: 11400000, guid: 4a2534d5133b3024699cb076b2b27311, type: 2}
 --- !u!1 &6117074228125570861
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +145,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 2f1eaeeaad36ee5469eff7ff158f37ba, type: 3}
+  m_Sprite: {fileID: 7662039412882028936, guid: cb3b811b6965c2f4787abc1140e0df36,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

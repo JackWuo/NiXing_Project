@@ -51,6 +51,7 @@ public class PlayerControl : MonoBehaviour
             isopenbag = !isopenbag;
             mybag.SetActive(isopenbag);
             InventoryMG.reflashbag(0);
+            //InventoryMG.OpenBag();
         }
         isopenbag = mybag.activeSelf;
     }

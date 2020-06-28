@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ItemonWorld : MonoBehaviour
+public class ItemOnWorldB : MonoBehaviour
 {
     public item thisitem;
     public Inventory Equipbag;
@@ -18,12 +18,13 @@ public class ItemonWorld : MonoBehaviour
         {
             tempid = rd.Next(1, 2);
         }
-        else if (tempid < 80)
+        else if (tempid < 65)
+        {
+            tempid = 5;
+        }
+        else
         {
             tempid = 0;
-        }
-        else {
-            tempid = 4;
         }
         thisitem = StaticBag.itemlist[tempid];
         transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = StaticBag.itemlist[tempid].itemimg;

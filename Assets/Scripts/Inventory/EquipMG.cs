@@ -98,6 +98,15 @@ public class EquipMG : MonoBehaviour
         }
     }
 
+    public static int GetAttributeValue(int sign)  ////获取属性接口，调用----EquipMG.GetAttributeValue (sign)
+    {                                       ////0获取攻击力，1获取防御，2速度，3法力，4闪避，其他返回-1，表示无效。
+        if (sign >= 0 && sign < 5)
+        {
+            return instance.attributevalues[sign];
+        }
+        return -1;
+    }
+
 
     /// <summary>
     /// 装备id映射到属性id上，比如 equipid==3 是剑， 映射到 attributeid为0的“攻击”属性上

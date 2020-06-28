@@ -7,6 +7,4 @@ public class Inventory : ScriptableObject
 {
     public List<item> itemlist = new List<item>();
     public item coin;
-    public item coin1;
-    public item coin2;
 }

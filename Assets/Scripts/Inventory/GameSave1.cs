@@ -39,14 +39,14 @@ public class GameSave1 : MonoBehaviour
         }
     }
 
-    public void Save()
+    public void Save()    ////保存背包数据接口，在Button中调用，挂在GameSaves上
     {
         SaveGame("GameSave/", "EquipBag.txt", EqInventory);
         SaveGame("GameSave/", "GoodsBag.txt", GoodsInventory);
         SaveGame("GameSave/", "EquipPanel.txt", EquipPanel);
     }
 
-    public void Load()
+    public void Load()   ////加载游戏背包数据接口，在Button中调用，挂在GameSaves上
     {
         LoadGame("GameSave/", "EquipBag.txt", EqInventory);
         LoadGame("GameSave/", "GoodsBag.txt", GoodsInventory);

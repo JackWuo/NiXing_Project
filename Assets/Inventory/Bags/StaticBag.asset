@@ -13,15 +13,11 @@ MonoBehaviour:
   m_Name: StaticBag
   m_EditorClassIdentifier: 
   itemlist:
-  - {fileID: 11400000, guid: 5143849159a25aa4eb7be9c55cf3a332, type: 2}
   - {fileID: 11400000, guid: 970a206ed5e65a24f8c9b7b9ea414a7c, type: 2}
-  - {fileID: 11400000, guid: d88e59fe8ef0c6c4d85ce79526d3e6ac, type: 2}
   - {fileID: 11400000, guid: d5114908cc965524da731ea5b4246341, type: 2}
-  - {fileID: 11400000, guid: 78213c0ab6cd79846abb277f1c5fe77d, type: 2}
   - {fileID: 11400000, guid: 22f11f27aef81724c86c622df9a6a05c, type: 2}
+  - {fileID: 11400000, guid: 78213c0ab6cd79846abb277f1c5fe77d, type: 2}
   - {fileID: 11400000, guid: a07ca3929326f7c4f927ac3885b81cdf, type: 2}
   - {fileID: 11400000, guid: 975fa4d30a6746f4f9fc07264248d2c6, type: 2}
   - {fileID: 11400000, guid: baea08cb80ad35b46bce0edf8fdb89ef, type: 2}
-  coin: {fileID: 11400000, guid: 5143849159a25aa4eb7be9c55cf3a332, type: 2}
-  coin1: {fileID: 11400000, guid: 970a206ed5e65a24f8c9b7b9ea414a7c, type: 2}
-  coin2: {fileID: 11400000, guid: d88e59fe8ef0c6c4d85ce79526d3e6ac, type: 2}
+  coin: {fileID: 11400000, guid: 970a206ed5e65a24f8c9b7b9ea414a7c, type: 2}
