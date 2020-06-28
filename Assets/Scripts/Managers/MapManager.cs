@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MapManager : MonoBehaviour
-{
-    public const int wallCount = 6;
+{ 
     public List<GameObject> wall = new List<GameObject>();
     public GameObject floor;
-    public GameObject food;
     public GameObject barrier;
     public List<GameObject> enemy = new List<GameObject>();
     public GameObject player;
     public GameObject door;
-    public GameObject chest;
-    public GameObject portal;
-    public GameObject businessman;
-    public GameObject forgeman;
+    public GameObject medicalChest;      // 医疗箱
+    public GameObject medicalRobot;     // 医疗机器人
+    public GameObject portal;                 // 传送门
 
 
     public int minBarrierCount;
@@ -24,53 +21,140 @@ public class MapManager : MonoBehaviour
     public int maxenemyCount;
     public int minChestCount;
     public int maxChestCount;
-    public int stage;
+    private int level;
 
     public Transform mapholder;
     private List<Vector2> positionList = new List<Vector2>();
     private List<GameObject> spawnWall = new List<GameObject>();
     private List<Vector2> allDoorPos = new List<Vector2>();
-    public int xLength = 45;
-    public int yLength = 30;
+    public int xLength = 40;
+    public int yLength = 40;
     private bool stopSpawn = false;
 
-    public GameObject[] MapParts;
 
     //AI系统
     public AstarPath astarPath;
-    void Awake()
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+    private void Start()
     {
         initMap();
     }
 
-
     public void DestroyMap()
     {
         Destroy(mapholder.gameObject);
+
     }
 
     public void initMap()
     {
-
+        //关卡阶段
+        level = GameManager.Instance.sceneLevel / 5;
+        if (GameManager.Instance.sceneLevel == 5)
+            AudioManager.Instance.StopPlayBGM();
+        //创建地板和围墙
         mapholder = new GameObject("Map").transform;
-        GameObject go = Instantiate(MapParts[0], Vector3.zero, Quaternion.identity);
-        GameObject go1 = Instantiate(MapParts[0], new Vector3(23, 0, 0), Quaternion.identity);
-        GameObject go2 = Instantiate(MapParts[0], new Vector3(23, -14, 0), Quaternion.identity);
-        GameObject go3 = Instantiate(MapParts[0], new Vector3(0, -14, 0), Quaternion.identity);
+        for (int i = 0; i < xLength; i++)
+            for (int j = 0; j < yLength; j++)
+                if (i == 0 || j == 0 || i == xLength - 1 || j == yLength - 1)
+                {
 
-        ////创建主角
-        //if(Gamemanager.Instance.isFirstStart)
-        //{
-        //    Gamemanager.Instance.isFirstStart = false;
-        //    GameObject.Instantiate(player, new Vector2(1, 1), Quaternion.identity);
-        //    player.GetComponent<playInfo>().RoleType = (RoleType)PlayerPrefs.GetInt("roleType",0);
-        //}
+                    GameObject go = GameObject.Instantiate(wall[1], new Vector3(i, j, 0), Quaternion.identity);
+                    go.transform.SetParent(mapholder);
+                }
+                else
+                {
+                    GameObject go = GameObject.Instantiate(floor, new Vector3(i, j, 0), Quaternion.identity);
+                    go.transform.SetParent(mapholder);
+                }
+
+        positionList.Clear();
+        for (int x = 1; x < xLength - 1; x++)
+        {
+            for (int y = 1; y < yLength - 1; y++)
+            {
+                positionList.Add(new Vector2(x, y));
+            }
+        }
+
+        for (int x = 1; x < 4; x++)
+        {
+            for (int y = 1; y < 4; y++)
+            {
+                positionList.Remove(new Vector2(x, y));
+            }
+        }
+
+        //创建主角
+        if (GameManager.Instance.isFirstStart)
+        {
+            GameManager.Instance.isFirstStart = false;
+            GameObject p = GameObject.Instantiate(player, new Vector2(1, 1), Quaternion.identity);
+            p.transform.SetParent(mapholder);
+            // player.GetComponent<playInfo>().RoleType = (RoleType)PlayerPrefs.GetInt("roleType", 0);
+        }
+
+
+        //创建围墙
+
+        SpawnWall(new Vector2(Random.Range(xLength / 5, xLength / 2), 0), 0);
+        SpawnWall(new Vector2(Random.Range(xLength / 5, xLength / 2), yLength - 1), 0);
+        SpawnWall(new Vector2(0, Random.Range(yLength / 5, yLength / 2)), 0);
+        SpawnWall(new Vector2(xLength - 1, Random.Range(yLength / 5, yLength / 2)), 0);
+        SpawnWall(new Vector2(Random.Range(xLength / 2, xLength - 1), yLength - 1), 0);
+        SpawnWall(new Vector2(Random.Range(xLength / 2, xLength - 1), 0), 0);
 
 
 
-        //astarPath.Scan();
 
 
+
+
+        //创建障碍物
+        int barrierCount = Random.Range(minBarrierCount, maxBarrierCount + 1);
+        for (int i = 0; i < barrierCount; i++)
+        {
+
+            CreateItemWithoutDoor(barrier, minBarrierCount, maxBarrierCount);
+
+        }
+        //创建宝箱
+        int chestCount = Random.Range(minChestCount, maxChestCount + 1);
+        for (int i = 0; i < chestCount; i++)
+        {
+            CreateItemWithoutDoor(medicalChest, minChestCount, maxChestCount);
+        }
+
+        //创建传送门
+        Vector2 portalPos = new Vector2(xLength - 2, yLength - 2);
+        GameObject port = GameObject.Instantiate(portal, portalPos, Quaternion.identity);
+        port.transform.SetParent(mapholder);
+        positionList.Remove(portalPos);
+
+
+        //创建医疗机器人
+        if (GameManager.Instance.sceneLevel % 5 == 3)
+        {
+            CreateItemWithoutDoor(medicalRobot, 1, 2);
+        }
+
+        //创建敌人
+        int enemyCount = Random.Range(minenemyCount, maxenemyCount + 1);
+        for (int i = 0; i < enemyCount; i++)
+        {
+            int enemy_index = Random.Range(0, 2);
+            CreateItem(enemy[enemy_index], minenemyCount, maxenemyCount);
+        }
+        if (GameManager.Instance.sceneLevel % 5 == 1)
+        {
+            CreateBigItem(enemy[2], 1, 2);
+        }
+        // astarPath.Scan();
     }
 
     private void CreateItem(GameObject item, int minIndex, int maxIndex)
@@ -263,5 +347,6 @@ public class MapManager : MonoBehaviour
             allDoorPos.Add(doorPre.transform.position);
             spawnWall.Clear();
         }
+
     }
 }
