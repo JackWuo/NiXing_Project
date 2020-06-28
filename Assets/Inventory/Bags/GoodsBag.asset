@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemlist:
   - {fileID: 11400000, guid: d5114908cc965524da731ea5b4246341, type: 2}
+  - {fileID: 11400000, guid: 78213c0ab6cd79846abb277f1c5fe77d, type: 2}
+  - {fileID: 11400000, guid: 22f11f27aef81724c86c622df9a6a05c, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -26,8 +28,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  coin: {fileID: 11400000, guid: 5143849159a25aa4eb7be9c55cf3a332, type: 2}
-  coin1: {fileID: 11400000, guid: 970a206ed5e65a24f8c9b7b9ea414a7c, type: 2}
-  coin2: {fileID: 11400000, guid: d88e59fe8ef0c6c4d85ce79526d3e6ac, type: 2}
+  coin: {fileID: 11400000, guid: 970a206ed5e65a24f8c9b7b9ea414a7c, type: 2}

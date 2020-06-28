@@ -14,7 +14,6 @@ public class SellManControl : MonoBehaviour
         {
             OpenShop();
             ShopMG.chooseBagReflash(0);
-            Destroy(gameObject);
         }
     }
 

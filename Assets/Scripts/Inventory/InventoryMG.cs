@@ -17,14 +17,15 @@ public class InventoryMG : MonoBehaviour
     public Text iteminfo;
 
     public Text CoinCount;
-    public Text CoinCount1;
-    public Text CoinCount2;
 
     public Text HPcount;
     public Text MPcount;
 
     public item MP;
     public item HP;
+    public item MedicineBox;
+
+    public GameObject bag;
 
     public List<GameObject> slots = new List<GameObject>();
     private void Awake()
@@ -86,8 +87,6 @@ public class InventoryMG : MonoBehaviour
 
         ///金币数量显示刷新
         instance.CoinCount.text = string.Join("", tempinventory.coin.itemHeld);
-        instance.CoinCount1.text = string.Join("", tempinventory.coin1.itemHeld);
-        instance.CoinCount2.text = string.Join("", tempinventory.coin2.itemHeld);
     }
 
     private static void chooseBagreflash()
@@ -95,9 +94,12 @@ public class InventoryMG : MonoBehaviour
         if (instance.whichbag == 0)
         {
             reflashItem(instance.Equipbag);
-        }else if (instance.whichbag == 1)
+            instance.iteminfo.text = "";
+        }
+        else if (instance.whichbag == 1)
         {
             reflashItem(instance.Goodsbag);
+            instance.iteminfo.text = "";
         }
     }
 
@@ -177,9 +179,19 @@ public class InventoryMG : MonoBehaviour
         return -1;
     }
 
-
-    public static bool GetGoods(int sign)   //sign-0 使用血瓶， sign-1使用蓝瓶
+    public static void OpenBag()     ////打开背包接口，调用----InventoryMG.OpenBag()
     {
+        instance.bag.SetActive(true);
+        reflashbag(0);
+    }
+
+    public static void ShutBag()     ////关闭背包接口，调用----InventoryMG.ShutBag()
+    {
+        instance.bag.SetActive(false);
+    }
+
+    public static bool GetGoods(int sign)   //使用药品接口，调用----InventoryMG.GetGoods(sign), sign-0 使用血瓶， sign-1使用蓝瓶，sign-2使用医疗箱,
+    {                                      //如果背包存在对应的物品就返回true,没有或者sign不是以上三个值就返回false
         if (sign == 0)
         {
             if (instance.Goodsbag.itemlist.Contains(instance.HP))
@@ -201,6 +213,19 @@ public class InventoryMG : MonoBehaviour
                 if (instance.MP.itemHeld == 1)
                 {
                     instance.Goodsbag.itemlist.Remove(instance.MP);
+                }
+                reflashHMPcount();
+                return true;
+            }
+        }
+        else if (sign == 2)
+        {
+            if (instance.Goodsbag.itemlist.Contains(instance.MedicineBox))
+            {
+                instance.MedicineBox.itemHeld -= 1;
+                if (instance.MedicineBox.itemHeld == 1)
+                {
+                    instance.Goodsbag.itemlist.Remove(instance.MedicineBox);
                 }
                 reflashHMPcount();
                 return true;
