@@ -11,6 +11,7 @@ public class player : MonoBehaviour
     GameObject weapon;
     playerAttack fireball;
 
+    //InventoryMG inventoryMG;
     playerStatus status;
     attackInfo attack;
     attackInfo.WeaponInfo weaponInfo;
@@ -24,6 +25,9 @@ public class player : MonoBehaviour
     public AudioClip dead;
     public AudioClip attacked;
 
+    bool lastInvetoryKeyState = false;
+    bool lastUseBloodRecoveryKeyState = false;
+    bool lastUseBlueRecoveryKeyState = false;
 
     void Start()
     {
@@ -33,7 +37,7 @@ public class player : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         audio = GetComponent<AudioSource>();
         status = GetComponent<playerStatus>();
-
+        //inventoryMG = FindObjectOfType<InventoryMG>();
         weapon = GameObject.Find("weapon");
         attack = GetComponent<attackInfo>();
         weaponInfo = attack.GetWeaponInfo((int)status.FaceTo);
@@ -185,6 +189,31 @@ public class player : MonoBehaviour
         //丢弃物品
     }
 
+    void CheckBagOpen()
+    {
+
+        if(!lastInvetoryKeyState && Input.GetKey(KeyCode.Tab))
+        {
+            if(status.IsBagOpen) { status.IsBagOpen = false; InventoryMG.ShutBag(); }
+            else { status.IsBagOpen = true; InventoryMG.OpenBag(); }
+        }
+        lastInvetoryKeyState = Input.GetKey(KeyCode.Tab);
+    }
+
+    void CheckItemUse()
+    {
+        if (!lastUseBloodRecoveryKeyState && Input.GetKey(KeyCode.Q))
+        {
+            InventoryMG.GetGoods(0);
+        }
+        lastUseBloodRecoveryKeyState = Input.GetKey(KeyCode.Q);
+
+        if (!lastInvetoryKeyState && Input.GetKey(KeyCode.E))
+        {
+            InventoryMG.GetGoods(1);
+        }
+        lastInvetoryKeyState = Input.GetKey(KeyCode.E);
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -194,6 +223,7 @@ public class player : MonoBehaviour
         if (Time.time - status.LastAttackTime > status.attackHoldTime | Time.time < status.attackHoldTime) status.IsAttack = false;
         if (Time.time - status.LastSkillTime > status.skillHoldTime | Time.time < status.skillHoldTime) status.IsSkill = false;
 
+        CheckBagOpen();
         CheckAttacked();
         CheckMove();
         CheckAttack();

@@ -163,6 +163,7 @@ public class MapManager : MonoBehaviour
         Vector2 pos = positionList[positionIndex];
         positionList.RemoveAt(positionIndex);
         GameObject go = GameObject.Instantiate(item, pos, Quaternion.identity);
+        go.GetComponent<enemyAI>().target = FindObjectOfType<player>().transform;
         if (go.tag == "player")
         {
         }
