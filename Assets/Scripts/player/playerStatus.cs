@@ -35,6 +35,7 @@ public class playerStatus : MonoBehaviour
 
     //技能信息
     bool isSkill;
+    public int skillPower = 50;
     public float skillRestTime = 0.4f;
     public float skillHoldTime = 0.4f;
     public float skillSpeed = 3f;
@@ -44,6 +45,7 @@ public class playerStatus : MonoBehaviour
 
     //被攻击信息
     bool isAttacked; //硬直状态
+    int defense;
     float lastAttackedTime;
     public float stiffTime = 0.4f;
 
@@ -66,7 +68,7 @@ public class playerStatus : MonoBehaviour
 
     //攻击力系统（装备）
 
-
+    
 
     //受到攻击或治疗
     public void UpdateBlood(int change)
@@ -87,12 +89,29 @@ public class playerStatus : MonoBehaviour
         curBlue += change;
         if (curBlue <= 0) curBlue = 0;
         else if (curBlue > maxBlue) curBlue = maxBlue;
-        Debug.LogFormat("player blood update to: {0}", curBlue);
+        Debug.LogFormat("player blue update to: {0}", curBlue);
 
     }
 
+    public void UpdateAttackPower(int change)
+    {
+        attackPower += change;
+        if (attackPower <= 0) attackPower = 0;
+        Debug.LogFormat("player attackPower update to: {0}", attackPower);
 
+    }
 
+    public void UpdateDefense(int change)
+    {
+        defense += change;
+        if (defense <= 0) defense = 0;
+        Debug.LogFormat("player defense update to: {0}", defense);
+    }
+
+    public int calculateDamage(int enemyAttack)
+    {
+        return enemyAttack - defense;
+    }
 
     public bool IsAttack { get => isAttack; set => isAttack = value; }
     public float LastAttackTime { get => lastAttackTime; set => lastAttackTime = value; }
@@ -111,6 +130,7 @@ public class playerStatus : MonoBehaviour
     public int CurBlue { get => curBlue; }
     public int AttackPower { get => attackPower; set => attackPower = value; }
     public int SkillBlue { get => skillBlue; set => skillBlue = value; }
+    public int Defense { get => defense; set => defense = value; }
 
     public void CheckFace(Vector2 f)
     {

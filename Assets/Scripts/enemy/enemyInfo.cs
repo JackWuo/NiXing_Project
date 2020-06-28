@@ -7,7 +7,7 @@ public class enemyInfo : MonoBehaviour
 {
     public static enemyInfo instance;
     public enum Type { warrier, witcher, boss};
-
+    public Type enemyType = Type.warrier;
     public struct Info
     {
         Type type;
@@ -86,7 +86,7 @@ public class enemyInfo : MonoBehaviour
     void Start()
     {
         instance = this;
-        thisInfo = warrierInfo;
+        changeEnemyType(enemyType);
     }
 
     // Update is called once per frame

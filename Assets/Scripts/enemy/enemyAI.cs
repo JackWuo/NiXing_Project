@@ -27,10 +27,9 @@ public class enemyAI : MonoBehaviour
     Collider2D collider;
     enemyInfo einfo;
 
-
+    Animator animator;
     //死亡掉落物体
     public GameObject collectObject;
-    int enemyBlood = 30;
     enemyAttack atk;
     void OnPathComplete(Path p)
     {
@@ -42,28 +41,40 @@ public class enemyAI : MonoBehaviour
     }
     void UpdatePath()
     {
+        if (target == null) return;
         if(seeker.IsDone()) seeker.StartPath(rigidbody2d.position, target.position, OnPathComplete);
     }
     void Start()
     {
         isAttack = false;
-        seeker = GetComponentInParent<Seeker>();
+        lastAttackTime = 0.0f;
+        seeker = GetComponent<Seeker>();
         rigidbody2d = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
         einfo = GetComponent<enemyInfo>();
         //生成怪物时需在这里把类型替换成想要的类型
-        einfo.changeEnemyType(enemyInfo.Type.witcher);
+        //einfo.changeEnemyType(enemyInfo.Type.witcher);
         lastAttackedTime = 0.0f;
         InvokeRepeating("UpdatePath", 0f, .5f);
+        animator = GetComponent<Animator>();
     }
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (einfo.thisInfo.IsDead) this.gameObject.SetActive(false);
+        if (einfo.thisInfo.IsDead)
+        {
+            if (collectObject != null)
+            {
+                GameObject collect = Instantiate(collectObject, transform.position, new Quaternion(0, 0, 0, 1));
+                collectObject = null;
+            }
+            Destroy(this.gameObject, 1.0f);
+
+        }
         //寻路
-        if (path == null) return;
+        if (path == null | target == null) return;
         float dis = Vector2.Distance(target.position, rigidbody2d.position);
 
         if (currentWayPoint >= path.vectorPath.Count || dis <= nextWayPointDistance)
@@ -83,6 +94,9 @@ public class enemyAI : MonoBehaviour
             currentWayPoint++;
             //Debug.LogFormat("current way point {0} distance {1}", currentWayPoint, dis);
         }
+
+
+        if (einfo.thisInfo.Type != enemyInfo.Type.boss) return;
         if (Time.time - lastAttackTime > attackHoldTime) isAttack = false;
         if (Time.time - lastAttackTime > attackRestTime && !isAttack)
         {
@@ -97,10 +111,15 @@ public class enemyAI : MonoBehaviour
         }
         if (isAttack)
         {
-                atk.GetComponent<Rigidbody2D>().velocity = rigidbody2d.velocity + atkMoveSpeed * (Vector2)atkDir;
+            atk.GetComponent<Rigidbody2D>().velocity = rigidbody2d.velocity + atkMoveSpeed * (Vector2)atkDir;
                 //Debug.LogFormat("enemy attack velocity {0}", atk.GetComponent<Rigidbody2D>().velocity);
         }
-        else if (atk) Destroy(atk.gameObject);
+        else if (atk)
+            Destroy(atk.gameObject, 0.3f);
+        animator.SetBool("is_attack", isAttack);
+        animator.SetBool("is_dead", einfo.thisInfo.IsDead);
+
+
         //攻击
         //atk.Attack(target);
 
@@ -119,8 +138,8 @@ public class enemyAI : MonoBehaviour
     //遭受trigger触发器的碰撞体碰撞时的回调函数
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.LogFormat("enemyTigger object name:{0}", collider.name);
-        //如果是武器则表现受击硬直
+        Debug.LogFormat("enemyTiggerEnter, collider name:{0}", collider.name);
+        //如果是伤害则表现受击硬直
         if (collider.tag != "enemy" && Time.time - lastAttackedTime > stiffTime)
         {
             lastAttackedTime = Time.time;
@@ -134,8 +153,8 @@ public class enemyAI : MonoBehaviour
                 case "weapon":
                     change = collider.gameObject.GetComponentInParent<playerStatus>().AttackPower;
                     break;
-                case "fireball":
-                    change = collider.gameObject.GetComponent<playerAttack>().Pstatus.AttackPower;
+                case "playerSkill(Clone)":
+                    change = collider.gameObject.GetComponent<playerAttack>().Pstatus.skillPower;
                     break;
                 default:
                     break;
@@ -145,7 +164,12 @@ public class enemyAI : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collider)
     {
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-        sprite.color = Color.white;
+        Debug.LogFormat("enemyTiggerExit, collider name:{0}", collider.name);
+
+        if (collider.tag != "enemy")
+        {
+            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+            sprite.color = Color.white;
+        }
     }
 }

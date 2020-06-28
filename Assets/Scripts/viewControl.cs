@@ -17,6 +17,7 @@ public class viewControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (p == null) return;
         Vector3 pos = p.transform.position;
         viewTransform.position = new Vector3(pos.x, pos.y, pos.z - 1.0f);
 

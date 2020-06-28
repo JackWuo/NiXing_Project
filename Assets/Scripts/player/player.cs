@@ -41,7 +41,16 @@ public class player : MonoBehaviour
         weapon.SetActive(false);
     }
 
+    void CheckAttacked()
+    {
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        if (status.IsAttacked)
+        {
+            sprite.color = Color.red;
 
+        }
+        else sprite.color = Color.white;
+    }
     void CheckMove()
     {
         //处于受击硬直状态时无法移动
@@ -70,9 +79,9 @@ public class player : MonoBehaviour
         status.CheckFace(moveDir);
 
         //设置animator变量
-        animator.SetFloat("face", (int)status.FaceTo);
+        //animator.SetFloat("face", (int)status.FaceTo);
         status.IsMove = (verticalInput != 0) | (horizontalInput != 0);
-        animator.SetBool("is_move", status.IsMove);
+        //animator.SetBool("is_move", status.IsMove);
 
     }
     void CheckAttack()
@@ -114,12 +123,11 @@ public class player : MonoBehaviour
     void CheckSkill()
     {
         if (status.IsAttacked | status.IsAttack | status.IsDead) return;
-        if (status.CurBlue < status.SkillBlue) return;
         if (Time.time - status.LastSkillTime > status.skillRestTime | Time.time < status.skillRestTime)
         {
             skillInfo = attack.GetSkillInfo((int)status.FaceTo);
             status.SkillDir = status.LastDir;
-            if (Input.GetButton("Fire2") && !status.IsSkill)
+            if (Input.GetButton("Fire2") && !status.IsSkill && status.CurBlue > status.SkillBlue)
             {
                 status.IsSkill = true;
                 status.LastSkillTime = Time.time;
@@ -130,6 +138,8 @@ public class player : MonoBehaviour
                 fireball.GetComponent<Transform>().position = tranform.position + skillInfo.pos;
                 fireball.GetComponent<Transform>().rotation = skillInfo.qua;
                 Destroy(fireball.gameObject, status.skillHoldTime);
+
+                status.UpdateBlue(-status.SkillBlue);
             }
             else
             {
@@ -139,7 +149,7 @@ public class player : MonoBehaviour
 
 
         //进行攻击动作
-        animator.SetBool("is_attack", status.IsSkill);
+        animator.SetBool("is_skill", status.IsSkill);
         if (status.IsSkill)
         {
             //rigidbody2d.velocity + 
@@ -149,7 +159,7 @@ public class player : MonoBehaviour
         }
         else
         {
-            if (fireball) Destroy(fireball);
+            if (fireball) Destroy(fireball.gameObject, 0.3f);
         }
     }
 
@@ -160,10 +170,21 @@ public class player : MonoBehaviour
         {
             rigidbody2d.velocity = new Vector2(0, 0);
             if (!audio.isPlaying) audio.PlayOneShot(dead);
+            animator.SetBool("is_dead", status.IsDead);
+            Destroy(this.gameObject, 1.0f);
         }
-        animator.SetBool("is_dead", status.IsDead);
 
     }
+
+    void enquire(GameObject collect)
+    {
+        //捡起物品
+    }
+    void drop()
+    {
+        //丢弃物品
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -173,9 +194,11 @@ public class player : MonoBehaviour
         if (Time.time - status.LastAttackTime > status.attackHoldTime | Time.time < status.attackHoldTime) status.IsAttack = false;
         if (Time.time - status.LastSkillTime > status.skillHoldTime | Time.time < status.skillHoldTime) status.IsSkill = false;
 
+        CheckAttacked();
         CheckMove();
         CheckAttack();
         CheckSkill();
+        
         CheckDead();
     }
 
@@ -187,7 +210,7 @@ public class player : MonoBehaviour
         {
             status.IsAttacked = true;
             enemyInfo einfo = collision.gameObject.GetComponent<enemyInfo>();
-            status.UpdateBlood(-einfo.thisInfo.AttackPower);
+            status.UpdateBlood(-status.calculateDamage(einfo.thisInfo.AttackPower));
             status.LastAttackedTime = Time.time;
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();
             sprite.color = Color.red;
@@ -214,19 +237,24 @@ public class player : MonoBehaviour
         {
             status.IsAttacked = true;
             //enemyAttack atkInfo = collider.GetComponentInParent<enemyAttack>();
-            status.UpdateBlood(-collider.gameObject.GetComponent<enemyAttack>().E.GetComponent<enemyInfo>().thisInfo.AttackPower);
+            enemyInfo einfo = collider.gameObject.GetComponent<enemyAttack>().E.GetComponent<enemyInfo>();
+            
+            status.UpdateBlood(-status.calculateDamage(einfo.thisInfo.AttackPower));
 
             if (!audio.isPlaying) audio.PlayOneShot(attacked);
 
             status.LastAttackedTime = Time.time;
-            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-            sprite.color = Color.red;
+
             rigidbody2d.velocity = (tranform.position - collider.GetComponentInParent<Transform>().position) * status.moveSpeed;
+        }
+
+        if(collider.gameObject.tag == "collect" && Input.GetKeyDown(KeyCode.E))
+        {
+            enquire(collider.gameObject);
         }
     }
     private void OnTriggerExit2D(Collider2D collider)
     {
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-        sprite.color = Color.white;
+
     }
 }
