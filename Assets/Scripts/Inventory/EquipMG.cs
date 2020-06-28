@@ -98,8 +98,8 @@ public class EquipMG : MonoBehaviour
         }
     }
 
-    public int GetAttributeValue(int sign)  ///获取属性接口，0获取攻击力，1获取防御，2速度，3法力，4闪避，其他返回-1，表示无效。
-    {
+    public static int GetAttributeValue(int sign)  ////获取属性接口，调用----EquipMG.GetAttributeValue (sign)
+    {                                       ////0获取攻击力，1获取防御，2速度，3法力，4闪避，其他返回-1，表示无效。
         if (sign >= 0 && sign < 5)
         {
             return instance.attributevalues[sign];
