@@ -66,6 +66,7 @@ public class playerStatus : MonoBehaviour
 
     bool isDead;
 
+    bool isBagOpen;
     //攻击力系统（装备）
 
     
@@ -131,6 +132,7 @@ public class playerStatus : MonoBehaviour
     public int AttackPower { get => attackPower; set => attackPower = value; }
     public int SkillBlue { get => skillBlue; set => skillBlue = value; }
     public int Defense { get => defense; set => defense = value; }
+    public bool IsBagOpen { get => isBagOpen; set => isBagOpen = value; }
 
     public void CheckFace(Vector2 f)
     {
@@ -158,6 +160,7 @@ public class playerStatus : MonoBehaviour
         IsMove = false;
         IsDash = false;
         IsDead = false;
+        IsBagOpen = false;
     }
     // Update is called once per frame
     void Update()

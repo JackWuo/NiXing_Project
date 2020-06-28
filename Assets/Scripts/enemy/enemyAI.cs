@@ -65,6 +65,7 @@ public class enemyAI : MonoBehaviour
     {
         if (einfo.thisInfo.IsDead)
         {
+            InventoryMG.instance.Goodsbag.coin.itemHeld += 10;
             if (collectObject != null)
             {
                 GameObject collect = Instantiate(collectObject, transform.position, new Quaternion(0, 0, 0, 1));

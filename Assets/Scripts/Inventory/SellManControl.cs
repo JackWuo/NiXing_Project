@@ -17,8 +17,22 @@ public class SellManControl : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            CloseShop();
+            //ShopMG.chooseBagReflash(0);
+        }
+    }
+
     private void OpenShop()
     {
         Shop.SetActive(true);
+    }
+
+    private void CloseShop()
+    {
+        Shop.SetActive(false);
     }
 }

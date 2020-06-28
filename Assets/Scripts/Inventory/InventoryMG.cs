@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryMG : MonoBehaviour
 {
-    static InventoryMG instance;
+    public static InventoryMG instance;
 
     public Inventory Equipbag;
     public Inventory Goodsbag;

@@ -71,9 +71,9 @@ MonoBehaviour:
   floor: {fileID: 3961648527827747517, guid: 6c975eb97d77b044e9587d8b1c2c064b, type: 3}
   barrier: {fileID: 4991271327680968296, guid: 2b7531350f0986a44a0e9f054d233cf5, type: 3}
   enemy:
-  - {fileID: 1265139479805884676, guid: e5f4c039754589c4099197daf0c03109, type: 3}
-  - {fileID: 7126752025521577589, guid: 372da51b9a99d214f8b87d171a36e9d8, type: 3}
-  - {fileID: 4977208581720381969, guid: 88ea3822bdbad2e4aa17fbca5462e4ad, type: 3}
+  - {fileID: 2753683293523449471, guid: 6fdad8ab96e9c7f49b95de190e3313eb, type: 3}
+  - {fileID: 3097747373692647348, guid: 1df207fb3159deb4385cda436cf84f4e, type: 3}
+  - {fileID: 1516938174698495966, guid: 372da51b9a99d214f8b87d171a36e9d8, type: 3}
   player: {fileID: 1652245402648197772, guid: 5ba5c2586910f354aa95a49cebc78079, type: 3}
   door: {fileID: 1365856765504912353, guid: 37da4633fc667064eaf6fe62e17eade4, type: 3}
   medicalChest: {fileID: 5031981324218847646, guid: 9900a9ebcfd3a9040b5b519cc5c6d687,
