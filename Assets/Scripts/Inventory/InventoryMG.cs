@@ -17,6 +17,8 @@ public class InventoryMG : MonoBehaviour
     public Text iteminfo;
 
     public Text CoinCount;
+    public Text CoinCount1;
+    public Text CoinCount2;
 
     public Text HPcount;
     public Text MPcount;
@@ -84,6 +86,8 @@ public class InventoryMG : MonoBehaviour
 
         ///金币数量显示刷新
         instance.CoinCount.text = string.Join("", tempinventory.coin.itemHeld);
+        instance.CoinCount1.text = string.Join("", tempinventory.coin1.itemHeld);
+        instance.CoinCount2.text = string.Join("", tempinventory.coin2.itemHeld);
     }
 
     private static void chooseBagreflash()
@@ -145,7 +149,9 @@ public class InventoryMG : MonoBehaviour
                 {
                     if (instance.Goodsbag.itemlist[i] == null)
                     {
+                        thisitem.itemHeld = 1;
                         instance.Goodsbag.itemlist[i] = thisitem;
+                        Debug.Log(i);
                         break;
                     }
                 }
@@ -156,6 +162,19 @@ public class InventoryMG : MonoBehaviour
             }
         }
         reflashbag(sign);
+        reflashHMPcount();
+    }
+
+    private static int judgeitemInBag(Inventory thisbag, item thisitem)
+    {
+        for (int i = 0; i < thisbag.itemlist.Count; i++)
+        {
+            if (thisbag.itemlist[i] == null)
+                continue;
+            if (thisbag.itemlist[i].itemid == thisitem.itemid)
+                return i;
+        }
+        return -1;
     }
 
 
@@ -190,7 +209,7 @@ public class InventoryMG : MonoBehaviour
         return false;
     }
 
-    private static void reflashHMPcount()
+    public static void reflashHMPcount()
     {
         instance.HPcount.text = string.Join("",instance.HP.itemHeld);
         instance.MPcount.text = string.Join("", instance.MP.itemHeld);

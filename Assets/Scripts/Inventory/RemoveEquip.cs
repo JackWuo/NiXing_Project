@@ -30,7 +30,7 @@ public class RemoveEquip : MonoBehaviour, IPointerDownHandler
         else if(eventData.pointerCurrentRaycast.gameObject.name == "Removetext")
         {
             //            Debug.Log(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent);
-            int tempitemid = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<EquipSlot>().EquipSlotItem.itemid;
+            int tempitemid = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<EquipSlot>().EquipSlotItem.attributeid;
             EquipMG.PutEquipToBag(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<EquipSlot>().Eqslotid, tempitemid);
             InventoryMG.MGAddToBag(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<EquipSlot>().EquipSlotItem, 0);
         }

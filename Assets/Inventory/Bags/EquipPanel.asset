@@ -15,7 +15,10 @@ MonoBehaviour:
   itemlist:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: baea08cb80ad35b46bce0edf8fdb89ef, type: 2}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 970a206ed5e65a24f8c9b7b9ea414a7c, type: 2}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  coin: {fileID: 0}
+  coin1: {fileID: 0}
+  coin2: {fileID: 0}

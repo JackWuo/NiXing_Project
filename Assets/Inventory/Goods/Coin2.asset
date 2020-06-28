@@ -10,14 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 102ef7b8551c2f049846394fd8cd97c0, type: 3}
-  m_Name: boots
+  m_Name: Coin2
   m_EditorClassIdentifier: 
-  name: "\u6218\u9774"
-  itemimg: {fileID: 21300000, guid: e420c5bc93cb2604695a893500c897e3, type: 3}
-  itemHeld: 2
-  isequip: 1
-  itemprice: 10
-  sellprice: 8
-  itemid: 6
-  itemattribute: 5
-  iteminfo: "\u6218\u9774\n\u901F\u5EA6\uFF1A+5"
+  name: "\u62A4\u76EE\u955C"
+  itemimg: {fileID: -2879889296319584804, guid: cb3b811b6965c2f4787abc1140e0df36,
+    type: 3}
+  itemHeld: 0
+  isequip: 0
+  iscoin: 1
+  itemprice: 0
+  sellprice: 0
+  attributeid: 0
+  itemid: 2
+  itemattribute: 10
+  iteminfo: 

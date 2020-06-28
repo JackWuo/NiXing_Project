@@ -21,6 +21,8 @@ public class ShopMG : MonoBehaviour
     public Text goodsinfo;
     public Text MinibagitemInfo;
     public Text CoinCount;
+    public Text CoinCount1;
+    public Text CoinCount2;
 
     public int choseid;
     public bool ismybaggoods;
@@ -75,7 +77,7 @@ public class ShopMG : MonoBehaviour
         for (int i = 0; i < instance.ShopBag.itemlist.Count; i++)
         {
             System.Random rd = new System.Random(Guid.NewGuid().GetHashCode());
-            int tempindex = rd.Next(instance.staticBag.itemlist.Count);
+            int tempindex = rd.Next(3, instance.staticBag.itemlist.Count);
             instance.ShopBag.itemlist[i] = instance.staticBag.itemlist[tempindex];
         }
     }
@@ -109,6 +111,8 @@ public class ShopMG : MonoBehaviour
                 {
                     reflashShop(instance.ShopBag, instance.shopgird, instance.goods, false);
                     instance.CoinCount.text = string.Join("", instance.playEqBag.coin.itemHeld);
+                    instance.CoinCount1.text = string.Join("", instance.playEqBag.coin1.itemHeld);
+                    instance.CoinCount2.text = string.Join("", instance.playEqBag.coin2.itemHeld);
                     break;
                 }
             case 1:
@@ -133,10 +137,20 @@ public class ShopMG : MonoBehaviour
         if (!instance.ismybaggoods && instance.ShopBag.itemlist[instance.choseid]!=null)
         {
             int tempprice = instance.ShopBag.itemlist[instance.choseid].itemprice;
-            if (tempprice <= instance.playEqBag.coin.itemHeld)
+            int allcoin = instance.playEqBag.coin.itemHeld + instance.playEqBag.coin1.itemHeld + instance.playEqBag.coin2.itemHeld;
+            if (tempprice <= allcoin)
             {
-
                 instance.playEqBag.coin.itemHeld -= tempprice;
+                if (instance.playEqBag.coin.itemHeld < 0)
+                {
+                    instance.playEqBag.coin1.itemHeld += instance.playEqBag.coin.itemHeld;
+                    instance.playEqBag.coin.itemHeld = 0;
+                }
+                if (instance.playEqBag.coin1.itemHeld < 0)
+                {
+                    instance.playEqBag.coin2.itemHeld += instance.playEqBag.coin1.itemHeld;
+                    instance.playEqBag.coin1.itemHeld = 0;
+                }
                 if (instance.ShopBag.itemlist[instance.choseid].isequip)
                 {
                     InventoryMG.MGAddToBag(instance.ShopBag.itemlist[instance.choseid], 0);
@@ -144,8 +158,10 @@ public class ShopMG : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("Buy Medicines");
                     InventoryMG.MGAddToBag(instance.ShopBag.itemlist[instance.choseid], 1);
-                    chooseBagReflash(1);
+                    //                    chooseBagReflash(1);
+                    InventoryMG.reflashHMPcount();
                 }
                 instance.goodsinfo.text = "";
                 instance.ShopBag.itemlist[instance.choseid] = null;
@@ -184,9 +200,22 @@ public class ShopMG : MonoBehaviour
 
     public void RemoveMyItem()
     {
+        System.Random rd = new System.Random(Guid.NewGuid().GetHashCode());
+        int tempid = rd.Next(2);
         if (instance.playerwhichbag == 2)
         {
-            instance.playEqBag.coin.itemHeld += instance.playEqBag.itemlist[instance.choseid].sellprice;
+            switch (tempid)
+            {
+                case 0:
+                    instance.playEqBag.coin.itemHeld += instance.playEqBag.itemlist[instance.choseid].sellprice;
+                    break;
+                case 1:
+                    instance.playEqBag.coin1.itemHeld += instance.playEqBag.itemlist[instance.choseid].sellprice;
+                    break;
+                case 2:
+                    instance.playEqBag.coin2.itemHeld += instance.playEqBag.itemlist[instance.choseid].sellprice;
+                    break;
+            }
             if (instance.playEqBag.itemlist[instance.choseid].itemHeld > 1)
                 instance.playEqBag.itemlist[instance.choseid].itemHeld -= 1;
             else if (instance.playEqBag.itemlist[instance.choseid].itemHeld == 1)
@@ -194,16 +223,32 @@ public class ShopMG : MonoBehaviour
                 instance.playEqBag.itemlist.Remove(instance.playEqBag.itemlist[instance.choseid]);
             chooseBagReflash(2);
             instance.CoinCount.text = string.Join("", instance.playEqBag.coin.itemHeld);
+            instance.CoinCount1.text = string.Join("", instance.playEqBag.coin1.itemHeld);
+            instance.CoinCount2.text = string.Join("", instance.playEqBag.coin2.itemHeld);
         }
         else if (instance.playerwhichbag == 1)
         {
-            instance.playGoodsBag.coin.itemHeld += instance.playGoodsBag.itemlist[instance.choseid].sellprice;
+            switch (tempid)
+            {
+                case 0:
+                    instance.playGoodsBag.coin.itemHeld += instance.playGoodsBag.itemlist[instance.choseid].sellprice;
+                    break;
+                case 1:
+                    instance.playGoodsBag.coin1.itemHeld += instance.playGoodsBag.itemlist[instance.choseid].sellprice;
+                    break;
+                case 2:
+                    instance.playGoodsBag.coin2.itemHeld += instance.playGoodsBag.itemlist[instance.choseid].sellprice;
+                    break;
+            }
             if (instance.playGoodsBag.itemlist[instance.choseid].itemHeld > 1)
                 instance.playGoodsBag.itemlist[instance.choseid].itemHeld -= 1;
             else if (instance.playGoodsBag.itemlist[instance.choseid].itemHeld == 1)
                 instance.playGoodsBag.itemlist[instance.choseid] = null;
             chooseBagReflash(1);
             instance.CoinCount.text = string.Join("", instance.playGoodsBag.coin.itemHeld);
+            instance.CoinCount1.text = string.Join("", instance.playEqBag.coin1.itemHeld);
+            instance.CoinCount2.text = string.Join("", instance.playEqBag.coin2.itemHeld);
+            InventoryMG.reflashHMPcount();
         }
     }
 }

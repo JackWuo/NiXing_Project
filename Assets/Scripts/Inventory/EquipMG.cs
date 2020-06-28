@@ -80,7 +80,7 @@ public class EquipMG : MonoBehaviour
         {
             if (instance.EquipPanel.itemlist[i] != null)
             {
-                int tempattrid = EquipToAttribute(instance.EquipPanel.itemlist[i].itemid);
+                int tempattrid = EquipToAttribute(instance.EquipPanel.itemlist[i].attributeid);
                 int tempattrivalue = instance.EquipPanel.itemlist[i].itemattribute;
                 instance.attributevalues[tempattrid] += tempattrivalue;
             }
@@ -126,12 +126,12 @@ public class EquipMG : MonoBehaviour
     }
 
 
-    public static item GetEquipFromBag(item thisitem)
+    public static item GetEquipFromBag(item thisitem, int thisid)
     {
-        item saveitem = instance.EquipPanel.itemlist[thisitem.itemid - 1];
+        item saveitem = instance.EquipPanel.itemlist[thisid];
         if (thisitem != null)
         {
-            instance.EquipPanel.itemlist[thisitem.itemid-1] = thisitem;
+            instance.EquipPanel.itemlist[thisid] = thisitem;
         }
         reflashEquipPanel();
         return saveitem;

@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102ef7b8551c2f049846394fd8cd97c0, type: 3}
   m_Name: Coin
   m_EditorClassIdentifier: 
-  name: coin
-  itemimg: {fileID: 21300000, guid: d16e487ed269d0f45b87f58d3edbc5ce, type: 3}
-  itemHeld: 872
+  name: "\u53E3\u7F69"
+  itemimg: {fileID: 6091569160325334035, guid: cb3b811b6965c2f4787abc1140e0df36, type: 3}
+  itemHeld: 0
   isequip: 0
+  iscoin: 1
   itemprice: 0
   sellprice: 0
+  attributeid: 0
   itemid: 0
   itemattribute: 0
   iteminfo: 

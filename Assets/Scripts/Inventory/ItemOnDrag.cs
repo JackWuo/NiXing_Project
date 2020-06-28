@@ -16,7 +16,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public void OnBeginDrag(PointerEventData eventData)
     {
         origintransform = transform.parent;
-        DragitemId = origintransform.GetComponent<Slot>().slotitem.itemid;
+        DragitemId = origintransform.GetComponent<Slot>().slotitem.attributeid;
         isequipbag = origintransform.GetComponent<Slot>().slotitem.isequip;
 
         originslotid = origintransform.GetComponent<Slot>().slotid;
@@ -85,8 +85,8 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         {
             if (isequipbag && eventData.pointerCurrentRaycast.gameObject.name == "EqSlot(Clone)")
             {
-                int tempitemid = origintransform.GetComponent<Slot>().slotitem.itemid;
-                int tempslotid = eventData.pointerCurrentRaycast.gameObject.GetComponent<EquipSlot>().Eqslotid + 1;
+                int tempitemid = origintransform.GetComponent<Slot>().slotitem.attributeid;
+                int tempslotid = eventData.pointerCurrentRaycast.gameObject.GetComponent<EquipSlot>().Eqslotid;
                 PutToEquipPos(origintransform.GetComponent<Slot>().slotitem, tempitemid, tempslotid);
             }
 
@@ -117,15 +117,15 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     private void PutToEquipPos(item thisitem, int itemid, int slotid)
     {
-        if (itemid == slotid)
-        {
-            item RemovedEquip = EquipMG.GetEquipFromBag(thisitem);
+        //if (itemid == slotid)
+        //{
+            item RemovedEquip = EquipMG.GetEquipFromBag(thisitem, slotid);
             if (RemovedEquip != null)
             {
                 InventoryMG.MGAddToBag(RemovedEquip, 0);
             }
             thisitem.itemHeld -= 1;
             InventoryMG.reflashbag(0);
-        }
+        //}
     }
 }

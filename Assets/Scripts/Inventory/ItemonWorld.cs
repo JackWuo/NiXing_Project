@@ -13,7 +13,18 @@ public class ItemonWorld : MonoBehaviour
     private void OnEnable()
     {
         System.Random rd = new System.Random(Guid.NewGuid().GetHashCode());
-        int tempid = rd.Next(StaticBag.itemlist.Count);
+        int tempid = rd.Next(1, 100);
+        if (tempid < 50)
+        {
+            tempid = rd.Next(0, 2);
+        }
+        else if (tempid < 80)
+        {
+            tempid = rd.Next(3, 5);
+        }
+        else {
+            tempid = rd.Next(6, 8);
+        }
         thisitem = StaticBag.itemlist[tempid];
         transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = StaticBag.itemlist[tempid].itemimg;
     }
@@ -22,7 +33,14 @@ public class ItemonWorld : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            AddItem();
+            if (thisitem.iscoin)
+            {
+                thisitem.itemHeld += 1;
+            }
+            else
+            {
+                AddItem();
+            }
             Destroy(gameObject);
         }
     }
@@ -31,38 +49,11 @@ public class ItemonWorld : MonoBehaviour
     {
         if (thisitem.isequip)
         {
-            AddToBag(Equipbag, 0);
+            InventoryMG.MGAddToBag(thisitem, 0);
         }
         else
         {
-            AddToBag(Goodsbag, 1);
+            InventoryMG.MGAddToBag(thisitem, 1);
         }
-    }
-
-    private void AddToBag(Inventory bag, int sign)
-    {
-        if (thisitem.Equals(bag.coin))
-        {
-            bag.coin.itemHeld += 1;
-        }
-        else if (!bag.itemlist.Contains(thisitem))
-        {
-            //mybag.itemlist.Add(thisitem);
-            //InventoryMG.CreateItem(thisitem);
-            for (int i = 0; i < bag.itemlist.Count; i++)
-            {
-                if (bag.itemlist[i] == null)
-                {
-                    thisitem.itemHeld = 1;
-                    bag.itemlist[i] = thisitem;
-                    break;
-                }
-            }
-        }
-        else if(bag.itemlist.Contains(thisitem))
-        {
-            thisitem.itemHeld += 1;
-        }
-        InventoryMG.reflashbag(sign);
     }
 }

@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102ef7b8551c2f049846394fd8cd97c0, type: 3}
   m_Name: Sword_0
   m_EditorClassIdentifier: 
-  name: "\u666E\u901A\u94C1\u5251"
-  itemimg: {fileID: -3753825769889500098, guid: 2c05be3ba119a0e44bb44b7fde36654b,
+  name: "\u88C5\u59071"
+  itemimg: {fileID: -6008277975840556194, guid: cb3b811b6965c2f4787abc1140e0df36,
     type: 3}
-  itemHeld: 4
+  itemHeld: 0
   isequip: 1
+  iscoin: 0
   itemprice: 10
   sellprice: 8
-  itemid: 3
+  attributeid: 3
+  itemid: 6
   itemattribute: 10
-  iteminfo: "\u666E\u901A\u94C1\u5251\n\u653B\u51FB\uFF1A+10"
+  iteminfo: "\u8D85\u58F0\u7C89\u788E\u4EEA\n\u653B\u51FB\uFF1A+10"
