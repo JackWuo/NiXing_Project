@@ -5,6 +5,9 @@ using UnityEngine;
 public class playerAttack : MonoBehaviour
 {
     // Start is called before the first frame update
+    playerStatus pstatus;
+
+    public playerStatus Pstatus { get => pstatus; set => pstatus = value; }
 
     void Start()
     {
@@ -19,8 +22,7 @@ public class playerAttack : MonoBehaviour
     {
         //Debug.LogFormat("collider name:{0}", collider.name);
         if (collider.name == "player" | collider.name == "wall") return;
-        player p = FindObjectOfType<player>();
-        if (p != null) p.isSkill = false;
+        if (pstatus != null) pstatus.IsSkill = false;
 
     }
 }

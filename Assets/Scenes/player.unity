@@ -263,6 +263,133 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &160169075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 160169077}
+  - component: {fileID: 160169076}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &160169076
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160169075}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4a703173e2fe3f645bf363e7349b21c3, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &160169077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160169075}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 897944189}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &167430340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,7 +2508,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 160169077}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2489,6 +2617,7 @@ GameObject:
   - component: {fileID: 1046060712}
   - component: {fileID: 1046060711}
   - component: {fileID: 1046060713}
+  - component: {fileID: 1046060714}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -2592,18 +2721,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df40cc157287b8149a2c9ccb9dbb3ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRestTime: 0.4
-  attackHoldTime: 0.4
-  isSkill: 0
-  skillRestTime: 0.4
-  skillHoldTime: 0.4
-  skillSpeed: 3
-  stiffTime: 0.5
-  dashRestTime: 0.4
-  dashSpeed: 10
-  dashHoldTime: 0.2
-  moveSpeed: 3
-  isDead: 0
+  attack1: {fileID: 8300000, guid: 4a84f3684ea074c4ab29f5c8f968545a, type: 3}
+  attack2: {fileID: 8300000, guid: a2f7cd42057669646844885301c1ac00, type: 3}
+  skill1: {fileID: 8300000, guid: 914045d6a23c18e45b563468f5d41f6b, type: 3}
+  skill2: {fileID: 8300000, guid: 3a3e67d3441e15047b237f2defbd0f6c, type: 3}
+  dead: {fileID: 8300000, guid: 6b70611918082a44d892001f7ce92136, type: 3}
+  attacked: {fileID: 8300000, guid: cfbf382f3e8f91743b907b72652c9f4f, type: 3}
 --- !u!50 &1046060710
 Rigidbody2D:
   serializedVersion: 4
@@ -2653,8 +2776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a7e053c6bcb82439451e28b0a351d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushBackScale: 1
-  atk: 1
 --- !u!82 &1046060713
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2666,7 +2787,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5280cd737e0ea714db8903d79e024148, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2751,6 +2872,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1046060714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046060705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5c6adb4959bf346b2e61667bb006c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodSlider: {fileID: 0}
+  blueSlider: {fileID: 0}
+  attackRestTime: 0.4
+  attackHoldTime: 0.4
+  skillRestTime: 0.4
+  skillHoldTime: 0.4
+  skillSpeed: 3
+  stiffTime: 0.4
+  dashRestTime: 1
+  dashSpeed: 10
+  dashHoldTime: 0.2
+  moveSpeed: 3
 --- !u!1 &1182084750
 GameObject:
   m_ObjectHideFlags: 0
@@ -3699,8 +3844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f36a90d69a15224cb41480e93532228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  pushBackScale: 10
 --- !u!1 &2000421776
 GameObject:
   m_ObjectHideFlags: 0

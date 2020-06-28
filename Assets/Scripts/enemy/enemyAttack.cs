@@ -5,6 +5,8 @@ using UnityEngine;
 public class enemyAttack : MonoBehaviour
 {
     // Start is called before the first frame update
+    enemyAI e;
+    public enemyAI E { get => e; set => e = value; }
 
     void Start()
     {
@@ -23,17 +25,15 @@ public class enemyAttack : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.LogFormat("collider name:{0}", collision.collider.name);
-        
         //isAttack = false;
         //if (atk) Destroy(atk);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.LogFormat("collider name:{0}", collider.name);
-        if (collider.tag == "enemy") return;
-        enemyAI ai = FindObjectOfType<enemyAI>();
-        if(ai != null) ai.isAttack = false;
+        Debug.LogFormat("enemyAttack collider name:{0}", collider.name);
+        if (collider.gameObject.tag == "enemy") return;
+        e.isAttack = false;
 
         //isAttack = false;
         //if (atk) Destroy(atk);

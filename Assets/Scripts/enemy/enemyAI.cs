@@ -25,12 +25,13 @@ public class enemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rigidbody2d;
     Collider2D collider;
+    enemyInfo einfo;
 
 
     //死亡掉落物体
     public GameObject collectObject;
     int enemyBlood = 30;
-    GameObject atk;
+    enemyAttack atk;
     void OnPathComplete(Path p)
     {
         if (!p.error)
@@ -45,9 +46,13 @@ public class enemyAI : MonoBehaviour
     }
     void Start()
     {
+        isAttack = false;
         seeker = GetComponentInParent<Seeker>();
         rigidbody2d = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
+        einfo = GetComponent<enemyInfo>();
+        //生成怪物时需在这里把类型替换成想要的类型
+        einfo.changeEnemyType(enemyInfo.Type.witcher);
         lastAttackedTime = 0.0f;
         InvokeRepeating("UpdatePath", 0f, .5f);
     }
@@ -56,6 +61,7 @@ public class enemyAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (einfo.thisInfo.IsDead) this.gameObject.SetActive(false);
         //寻路
         if (path == null) return;
         float dis = Vector2.Distance(target.position, rigidbody2d.position);
@@ -77,26 +83,24 @@ public class enemyAI : MonoBehaviour
             currentWayPoint++;
             //Debug.LogFormat("current way point {0} distance {1}", currentWayPoint, dis);
         }
-
         if (Time.time - lastAttackTime > attackHoldTime) isAttack = false;
         if (Time.time - lastAttackTime > attackRestTime && !isAttack)
         {
-            atk = Instantiate(Resources.Load("enemy/enemyAttack", typeof(GameObject))) as GameObject;
+            atk = Instantiate(Resources.Load("enemy/enemyAttack", typeof(enemyAttack))) as enemyAttack;
+            atk.E = this;
             Vector2 atkPos = collider.ClosestPoint((Vector2)(target.position));
             atk.GetComponent<Transform>().position = new Vector3(atkPos.x, atkPos.y, 0);
-            atkDir = (target.position - atk.GetComponentInParent<Transform>().position).normalized;
+            atkDir = (target.position - this.transform.position).normalized;
             isAttack = true;
             lastAttackTime = Time.time;
+            Destroy(atk.gameObject, attackHoldTime);
         }
-
         if (isAttack)
         {
-            atk.GetComponent<Rigidbody2D>().velocity = atkMoveSpeed * atkDir;
+                atk.GetComponent<Rigidbody2D>().velocity = rigidbody2d.velocity + atkMoveSpeed * (Vector2)atkDir;
+                //Debug.LogFormat("enemy attack velocity {0}", atk.GetComponent<Rigidbody2D>().velocity);
         }
-        else
-        {
-            if (atk) Destroy(atk);
-        }
+        else if (atk) Destroy(atk.gameObject);
         //攻击
         //atk.Attack(target);
 
@@ -123,6 +127,20 @@ public class enemyAI : MonoBehaviour
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();
             sprite.color = Color.red;
             rigidbody2d.velocity = (GetComponent<Transform>().position - collider.GetComponentInParent<Transform>().position) * moveSpeed;
+
+            int change = 0;
+            switch(collider.gameObject.name)
+            {
+                case "weapon":
+                    change = collider.gameObject.GetComponentInParent<playerStatus>().AttackPower;
+                    break;
+                case "fireball":
+                    change = collider.gameObject.GetComponent<playerAttack>().Pstatus.AttackPower;
+                    break;
+                default:
+                    break;
+            }
+            einfo.UpdateBlood(-change);
         }
     }
     private void OnTriggerExit2D(Collider2D collider)

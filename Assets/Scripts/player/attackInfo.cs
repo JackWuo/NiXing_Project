@@ -5,8 +5,6 @@ using UnityEngine;
 public class attackInfo : MonoBehaviour
 {
     // Start is called before the first frame weaponUpdate
-    public float pushBackScale = 1.0f;
-    public float atk = 1.0f;
 
     public static float skillSpeed = 8f;
     //武器的初始位置以及朝向，之后会重写的所以不必在意这块硬编码= =
@@ -44,10 +42,10 @@ public class attackInfo : MonoBehaviour
 
     void Start()
     {
-        weaponUp = new WeaponInfo(new Vector3(-0.4f, 0.8f, 0), new Vector3(0, 0.5f, 0), new Quaternion(0, 0, 0, 1), -4, 1);
-        weaponDown = new WeaponInfo(new Vector3(-0.4f, -0.8f, 0), new Vector3(0, -0.5f, 0), new Quaternion(0, 0, 0.707f, 0.707f), 4, 1);
-        weaponLeft = new WeaponInfo(new Vector3(-0.8f, 0.4f, 0), new Vector3(-0.5f, 0, 0), new Quaternion(0, 0, 0, 1), 4, 1);
-        weaponRight = new WeaponInfo(new Vector3(0.8f, 0.5f, 0), new Vector3(0.5f, 0, 0), new Quaternion(0, 0, -0.707f, 0.707f), -4, 1);
+        weaponUp = new WeaponInfo(new Vector3(-0.4f, 0.8f, 0), new Vector3(0, 0.5f, 0), new Quaternion(0, 0, 0, 1), -4, 0);
+        weaponDown = new WeaponInfo(new Vector3(-0.4f, -0.8f, 0), new Vector3(0, -0.5f, 0), new Quaternion(0, 0, 0.707f, 0.707f), 4, 0);
+        weaponLeft = new WeaponInfo(new Vector3(-0.8f, 0.4f, 0), new Vector3(-0.5f, 0, 0), new Quaternion(0, 0, 0, 1), 4, 0);
+        weaponRight = new WeaponInfo(new Vector3(0.8f, 0.5f, 0), new Vector3(0.5f, 0, 0), new Quaternion(0, 0, -0.707f, 0.707f), -4, 0);
 
         skillUp = new SkillInfo(new Vector3(0, -1, 0), new Quaternion(0, 0, 0.707f, 0.707f));
         skillDown = new SkillInfo(new Vector3(0, 1, 0), new Quaternion(0, 0, -0.707f, 0.707f));
