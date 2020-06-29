@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public int sceneLevel = 1;
     private static GameManager _instance;
     private MapManager mapmanager;
-    private GameObject player;
+    public GameObject player;
     private bool sleepStep;
     //UI部分
     public Button bag_Button;

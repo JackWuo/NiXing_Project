@@ -47,7 +47,7 @@ public class MapManager : MonoBehaviour
 
     public void DestroyMap()
     {
-        Destroy(mapholder.gameObject);
+        DestroyImmediate(mapholder.gameObject);
 
     }
 
@@ -58,6 +58,11 @@ public class MapManager : MonoBehaviour
         if (GameManager.Instance.sceneLevel == 5)
             AudioManager.Instance.StopPlayBGM();
         //创建地板和围墙
+        if(mapholder!=null)
+        {
+            Destroy(mapholder.gameObject);
+            mapholder = null;
+        }
         mapholder = new GameObject("Map").transform;
         for (int i = 0; i < xLength; i++)
             for (int j = 0; j < yLength; j++)
@@ -95,7 +100,8 @@ public class MapManager : MonoBehaviour
         {
             GameManager.Instance.isFirstStart = false;
             GameObject p = GameObject.Instantiate(player, new Vector2(1, 1), Quaternion.identity);
-            p.transform.SetParent(mapholder);
+            GameManager.Instance.player = p;
+         //   p.transform.SetParent(mapholder);
             // player.GetComponent<playInfo>().RoleType = (RoleType)PlayerPrefs.GetInt("roleType", 0);
         }
 

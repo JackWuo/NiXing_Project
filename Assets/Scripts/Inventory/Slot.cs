@@ -15,7 +15,14 @@ public class Slot : MonoBehaviour
     public string iteminfo;
     public void itemOnClick()
     {
-        InventoryMG.updateiteminfo(iteminfo);
+        if(iteminfo==InventoryMG.instance.iteminfo.text)
+        {
+            
+        }
+        else
+        {
+            InventoryMG.updateiteminfo(iteminfo);
+        }
     }
 
     public int setslot(item mitem)
