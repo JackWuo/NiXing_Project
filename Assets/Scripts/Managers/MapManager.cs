@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class MapManager : MonoBehaviour
 { 
@@ -34,7 +35,6 @@ public class MapManager : MonoBehaviour
 
     //AI系统
     public AstarPath astarPath;
-
     // Update is called once per frame
     void Update()
     {
@@ -154,7 +154,11 @@ public class MapManager : MonoBehaviour
         {
             CreateBigItem(enemy[2], 1, 2);
         }
-        // astarPath.Scan();
+        astarPath = GetComponent<AstarPath>();
+        if (astarPath)
+        {
+            astarPath.Scan();
+        }
     }
 
     private void CreateItem(GameObject item, int minIndex, int maxIndex)

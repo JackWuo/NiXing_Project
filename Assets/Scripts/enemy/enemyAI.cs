@@ -7,6 +7,7 @@ public class enemyAI : MonoBehaviour
     public Transform target;
     public float moveSpeed = 1f;
     public float nextWayPointDistance = 2f;
+    public float maxSearchDis = 60f;
 
     public float stiffTime = 0.3f;
     float lastAttackedTime;
@@ -77,7 +78,7 @@ public class enemyAI : MonoBehaviour
         //寻路
         if (path == null | target == null) return;
         float dis = Vector2.Distance(target.position, rigidbody2d.position);
-
+        if (dis > maxSearchDis) return;
         if (currentWayPoint >= path.vectorPath.Count || dis <= nextWayPointDistance)
         {
             reachEndofPath = true;
@@ -149,12 +150,12 @@ public class enemyAI : MonoBehaviour
             rigidbody2d.velocity = (GetComponent<Transform>().position - collider.GetComponentInParent<Transform>().position) * moveSpeed;
 
             int change = 0;
-            switch(collider.gameObject.name)
+            switch(collider.gameObject.tag)
             {
                 case "weapon":
                     change = collider.gameObject.GetComponentInParent<playerStatus>().AttackPower;
                     break;
-                case "playerSkill(Clone)":
+                case "playerSkill":
                     change = collider.gameObject.GetComponent<playerAttack>().Pstatus.skillPower;
                     break;
                 default:

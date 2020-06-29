@@ -21,7 +21,7 @@ public class playerAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         //Debug.LogFormat("collider name:{0}", collider.name);
-        if (collider.name == "player" | collider.name == "wall") return;
+        if (collider.tag == "player" | collider.tag == "wall") return;
         if (pstatus != null) pstatus.IsSkill = false;
 
     }

@@ -81,7 +81,8 @@ public class player : MonoBehaviour
         if (status.IsDash) rigidbody2d.velocity = status.LastDir * status.dashSpeed;
         else rigidbody2d.velocity = moveDir * status.moveSpeed;
         status.CheckFace(moveDir);
-
+        if (status.FaceTo == playerStatus.Face.left) tranform.rotation = new Quaternion(0, 1, 0, 0);
+        else if(status.FaceTo == playerStatus.Face.right) tranform.rotation = new Quaternion(0, 0, 0, 1);
         //设置animator变量
         //animator.SetFloat("face", (int)status.FaceTo);
         status.IsMove = (verticalInput != 0) | (horizontalInput != 0);
