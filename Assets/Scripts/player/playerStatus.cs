@@ -67,7 +67,6 @@ public class playerStatus : MonoBehaviour
     bool isDead;
 
     bool isBagOpen;
-    //攻击力系统（装备）
 
     
 
@@ -114,6 +113,13 @@ public class playerStatus : MonoBehaviour
         return enemyAttack - defense;
     }
 
+    public void medicine()
+    {
+        //if (Input.GetKeyDown(KeyCode.Z)) { InventoryMG.GetGoods(0); UpdateBlood(20); }
+        //if(Input.GetKeyDown(KeyCode.X) && InventoryMG.GetGoods(1)) { UpdateBlue(20); }
+        //if (Input.GetKeyDown(KeyCode.C) && InventoryMG.GetGoods(2)) { UpdateBlood(100); UpdateBlue(100); }
+    }
+
     public bool IsAttack { get => isAttack; set => isAttack = value; }
     public float LastAttackTime { get => lastAttackTime; set => lastAttackTime = value; }
     public bool IsSkill { get => isSkill; set => isSkill = value; }
@@ -146,8 +152,8 @@ public class playerStatus : MonoBehaviour
     void Start()
     {
         instance = this;
-        //bloodSlider.value = curBlood;
-        //blueSlider.value = curBlue;
+        bloodSlider.value = instance.curBlood;
+        blueSlider.value = instance.curBlue;
 
         LastAttackTime = 0.0f;
         LastAttackedTime = 0.0f;
@@ -165,21 +171,8 @@ public class playerStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //bloodSlider.value = curBlood;
-        //blueSlider.value = curBlue;
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{   //如果有剩余血药剂
-        //    //if (InventoryMG.GetGoods(0)) { 
-        //    upBlood();
-        //    //}
-        //    Debug.Log("您按下了Q键");
-        //}
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{   //如果有剩余血药剂
-        //    //if (InventoryMG.GetGoods(1)) { 
-        //    upBlue();
-        //    //}
-        //    Debug.Log("您按下了E键");
-        //}
+        medicine();
+        bloodSlider.value = instance.curBlood;
+        blueSlider.value = instance.curBlue;
     }
 }
