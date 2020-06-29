@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -177,9 +178,12 @@ public class player : MonoBehaviour
             if (!audio.isPlaying) audio.PlayOneShot(dead);
             animator.SetBool("is_dead", status.IsDead);
             Destroy(this.gameObject, 1.0f);
+            GameManager.Instance.Dead();
         }
 
     }
+
+   
 
     void enquire(GameObject collect)
     {

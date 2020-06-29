@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     public bool isBag = false;
     public bool isSkill = false;
 
+    public Text gameOverText;
+
 
     public static GameManager Instance
     {
@@ -94,7 +96,16 @@ public class GameManager : MonoBehaviour
 
     }
 
-
+    public void Dead()
+    {
+        gameOverText.gameObject.SetActive(true);
+        StartCoroutine(ChangeScene());
+    }
+    private IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Start");
+    }
     public void reStart()
     {
         GameManager.Instance.sceneLevel++;
