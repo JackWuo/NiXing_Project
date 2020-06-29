@@ -158,12 +158,14 @@ MonoBehaviour:
   target: {fileID: 0}
   moveSpeed: 1
   nextWayPointDistance: 2
+  maxSearchDis: 100
   stiffTime: 0.3
   atkMoveSpeed: 4
   attackRestTime: 2
   attackHoldTime: 1.5
   isAttack: 0
-  collectObject: {fileID: 0}
+  collectObject: {fileID: 3177799561823171708, guid: 28fd91b71f5991648a383a4d99a5b1a2,
+    type: 3}
 --- !u!114 &3628172294872836008
 MonoBehaviour:
   m_ObjectHideFlags: 0
