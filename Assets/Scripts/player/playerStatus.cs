@@ -115,9 +115,9 @@ public class playerStatus : MonoBehaviour
 
     public void medicine()
     {
-        //if (Input.GetKeyDown(KeyCode.Z)) { InventoryMG.GetGoods(0); UpdateBlood(20); }
-        //if(Input.GetKeyDown(KeyCode.X) && InventoryMG.GetGoods(1)) { UpdateBlue(20); }
-        //if (Input.GetKeyDown(KeyCode.C) && InventoryMG.GetGoods(2)) { UpdateBlood(100); UpdateBlue(100); }
+        if (Input.GetKeyDown(KeyCode.Z)&& InventoryMG.GetGoods(0)) { UpdateBlood(20);  }
+        if (Input.GetKeyDown(KeyCode.X) && InventoryMG.GetGoods(1)) {  UpdateBlue(20); }
+        if (Input.GetKeyDown(KeyCode.C) && InventoryMG.GetGoods(2)) { UpdateBlood(100);  UpdateBlue(100); }
     }
 
     public bool IsAttack { get => isAttack; set => isAttack = value; }
