@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public bool isSkill = false;
 
     public Text gameOverText;
+    public Text LevelText;
 
 
     public static GameManager Instance
@@ -81,6 +82,7 @@ public class GameManager : MonoBehaviour
         */
         initGame();
         mapmanager.initMap();
+        StartCoroutine(ShowLevelText());
         // SceneManager.sceneLoaded += OnSceneLoaded;//场景加载时调用
     }
 
@@ -90,10 +92,12 @@ public class GameManager : MonoBehaviour
         mapmanager = GetComponent<MapManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator ShowLevelText()
     {
-
+        LevelText.gameObject.SetActive(true);
+        LevelText.text = "Level " + sceneLevel;
+        yield return new WaitForSeconds(2f);
+        LevelText.gameObject.SetActive(false);
     }
 
     public void Dead()
@@ -108,7 +112,7 @@ public class GameManager : MonoBehaviour
     }
     public void reStart()
     {
-        GameManager.Instance.sceneLevel++;
+        StartCoroutine(ShowLevelText());
         mapmanager.DestroyMap();
         mapmanager.initMap();
         Instance.Player.transform.position = new Vector2(1, 1);
@@ -122,5 +126,6 @@ public class GameManager : MonoBehaviour
         Instance.Player.transform.position = new Vector2(1, 1);
         Debug.Log("load");
     }
+
 
 }
