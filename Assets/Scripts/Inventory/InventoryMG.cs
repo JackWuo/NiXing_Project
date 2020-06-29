@@ -194,39 +194,45 @@ public class InventoryMG : MonoBehaviour
     {                                      //如果背包存在对应的物品就返回true,没有或者sign不是以上三个值就返回false
         if (sign == 0)
         {
-            if (instance.Goodsbag.itemlist.Contains(instance.HP))
+            if (instance.Goodsbag.itemlist.Contains(instance.HP)&& instance.HP.itemHeld >0)
             {
-                instance.HP.itemHeld -= 1;
+                
                 if (instance.HP.itemHeld == 1)
                 {
+                    instance.HP.itemHeld = 0;
                     instance.Goodsbag.itemlist.Remove(instance.HP);
-                }
+                }else
+                    instance.HP.itemHeld -= 1;
                 reflashHMPcount();
                 return true;
             }
             return false;
         }else if (sign == 1)
         {
-            if (instance.Goodsbag.itemlist.Contains(instance.MP))
+            if (instance.Goodsbag.itemlist.Contains(instance.MP)&& instance.MP.itemHeld >0)
             {
-                instance.MP.itemHeld -= 1;
+                
                 if (instance.MP.itemHeld == 1)
                 {
+                    instance.MP.itemHeld = 0;
                     instance.Goodsbag.itemlist.Remove(instance.MP);
-                }
+                }else
+                    instance.MP.itemHeld -= 1;
                 reflashHMPcount();
                 return true;
             }
         }
         else if (sign == 2)
         {
-            if (instance.Goodsbag.itemlist.Contains(instance.MedicineBox))
+            if (instance.Goodsbag.itemlist.Contains(instance.MedicineBox)&& instance.MedicineBox.itemHeld >0)
             {
-                instance.MedicineBox.itemHeld -= 1;
+                
                 if (instance.MedicineBox.itemHeld == 1)
                 {
+                    instance.MedicineBox.itemHeld = 0;
                     instance.Goodsbag.itemlist.Remove(instance.MedicineBox);
-                }
+                }else
+                    instance.MedicineBox.itemHeld -= 1;
                 reflashHMPcount();
                 return true;
             }
