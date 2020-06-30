@@ -18,4 +18,10 @@ public class MoveBag : MonoBehaviour, IDragHandler
     {
         currrect = GetComponent<RectTransform>();
     }
+
+
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
 }

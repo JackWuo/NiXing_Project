@@ -8,6 +8,11 @@ public class SellManControl : MonoBehaviour
     public Inventory ShopBag;
     public GameObject Shop;
 
+
+    private void Awake()
+    {
+        Shop = GameObject.Find("SellManBag");
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
