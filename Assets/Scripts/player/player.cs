@@ -209,13 +209,13 @@ public class player : MonoBehaviour
     {
         if (!lastUseBloodRecoveryKeyState && Input.GetKey(KeyCode.Q))
         {
-            InventoryMG.GetGoods(0);
+            if (InventoryMG.GetGoods(0)) status.UpdateBlood(20);
         }
         lastUseBloodRecoveryKeyState = Input.GetKey(KeyCode.Q);
 
         if (!lastInvetoryKeyState && Input.GetKey(KeyCode.E))
         {
-            InventoryMG.GetGoods(1);
+            if (InventoryMG.GetGoods(1)) status.UpdateBlue(25);
         }
         lastInvetoryKeyState = Input.GetKey(KeyCode.E);
     }
@@ -229,6 +229,7 @@ public class player : MonoBehaviour
         if (Time.time - status.LastSkillTime > status.skillHoldTime | Time.time < status.skillHoldTime) status.IsSkill = false;
 
         CheckBagOpen();
+        CheckItemUse();
         CheckAttacked();
         CheckMove();
         CheckAttack();
